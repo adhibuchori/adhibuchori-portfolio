@@ -1,6 +1,6 @@
 #home {
   position: relative;
-  padding: 56px 72px;
+  padding: 24px 72px;
   height: auto;
 }
 
@@ -116,7 +116,7 @@
   flex-direction: column;
   width: 60%;
   gap: 32px;
-  padding: 56px;
+  padding: 40px;
   border-radius: 24px;
 
   background: rgba(255, 255, 255, 0.2);
