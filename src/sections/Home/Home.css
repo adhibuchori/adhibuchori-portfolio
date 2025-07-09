@@ -187,6 +187,7 @@
 
 .home-stats-track {
   display: flex;
+  flex-shrink: 0;
   width: max-content;
   gap: 24px;
   animation: scroll-left 20s linear infinite;
