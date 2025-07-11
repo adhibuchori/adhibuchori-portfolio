@@ -17,7 +17,7 @@ const BubbleCursor: React.FC<BubbleCursorProps> = ({
 }) => {
   return (
     <div
-      className={`home-bubble-wrapper ${className}`}
+      className={`home-bubble-wrapper ${className} glass-effect`}
       style={{ top, left, right }}
     >
       <p>{label}</p>

@@ -17,9 +17,18 @@ const HomeSection = () => {
     <section id="home">
       <div className="home-container">
         <div className="home-profile-container">
-          <div className="home-profile-picture-wrapper">
-            <img className="home-profile-picture" src={ImageProfile} />
-            <img src={IconCursor} ref={cursorRef} className="moving-cursor" />
+          <div className="home-profile-picture-wrapper glass-effect">
+            <img
+              className="home-profile-picture"
+              src={ImageProfile}
+              alt="Home Profile"
+            />
+            <img
+              className="moving-cursor"
+              src={IconCursor}
+              ref={cursorRef}
+              alt="Icon Cursor"
+            />
             {bubbles.map((bubble, index) => (
               <BubbleCursor
                 key={index}
@@ -32,7 +41,7 @@ const HomeSection = () => {
             ))}
           </div>
         </div>
-        <div className="home-content-container">
+        <div className="home-content-container glass-effect">
           <h1 className="home-identity-text">
             Hello, I'm Mochammad Adhi Buchori
           </h1>
@@ -45,12 +54,13 @@ const HomeSection = () => {
           </p>
           <p className="home-stats-text">Quick Stats</p>
           <HomeStatsSection />
+          {/* TODO: Add action for buttons. */}
           <div className="home-button-container">
-            <div className="home-button-wrapper contained">
+            <div className="home-button-wrapper glass-effect contained">
               <img src={IconDownload} alt="Icon Document" />
               <p>Download CV</p>
             </div>
-            <div className="home-button-wrapper outlined">
+            <div className="home-button-wrapper glass-effect outlined">
               <img src={IconMail} alt="Icon Mail" />
               <p>Contact Me</p>
             </div>

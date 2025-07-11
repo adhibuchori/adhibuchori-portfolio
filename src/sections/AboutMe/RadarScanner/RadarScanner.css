@@ -16,7 +16,7 @@
     animation: scanning 6s infinite linear;
     background-image: linear-gradient(
       to top right,
-      #819a91 0%,
+      var(--color-primary-500) 0%,
       transparent 50%
     );
     transform-origin: top left;
@@ -61,7 +61,6 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      opacity: 0;
 
       &:nth-child(1) {
         animation-delay: 2250ms;
