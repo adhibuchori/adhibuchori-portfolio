@@ -2,7 +2,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: whitesmoke;
   z-index: 1000;
 }
 
@@ -22,7 +21,7 @@
 .navbar-toggle {
   display: none;
   font-size: 1.5rem;
-  color: #333;
+  color: black;
   background: none;
   border: none;
 }
@@ -39,12 +38,12 @@
 .navbar-item {
   list-style: none;
   cursor: pointer;
-  color: #333;
+  color: black;
   transition: color 0.3s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .navbar-item.active {
-  background-color: #819a91;
+  background-color: var(--color-primary-500);
   color: white;
   padding: 10px 20px;
   border-radius: 12px;

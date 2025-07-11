@@ -13,6 +13,7 @@ const Navbar = () => {
     { id: "my-journey", label: "My Journey" },
     { id: "tech-stack", label: "Tech Stack" },
     { id: "projects", label: "Projects" },
+    { id: "testimonials", label: "Testimonials" },
     { id: "contact-me", label: "Contact Me" },
   ];
 
@@ -52,7 +53,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar`}>
+    <nav className={`navbar glass-effect`}>
       <div className="navbar-container">
         <h1 className="navbar-title">adhibuchori’s Portfolio</h1>
 
@@ -65,7 +66,7 @@ const Navbar = () => {
             <li
               key={item.id}
               className={`navbar-item ${
-                activeSection === item.id ? "active" : ""
+                activeSection === item.id ? "active glass-effect" : ""
               }`}
               onClick={() => handleScroll(item.id)}
             >
