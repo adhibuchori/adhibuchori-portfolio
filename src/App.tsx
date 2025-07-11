@@ -6,6 +6,7 @@ import TechStackSection from "./sections/TechStack/TechStack";
 import ProjectsSection from "./sections/Projects/Projects";
 import ContactMeSection from "./sections/ContactMe/ContactMe";
 import "./styles/App.css";
+import TestimonialsSection from "./sections/Testimonials/Testimonials";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <MyJourneySection />
         <TechStackSection />
         <ProjectsSection />
+        <TestimonialsSection />
         <ContactMeSection />
       </main>
     </>
