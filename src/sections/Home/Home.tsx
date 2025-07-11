@@ -1,6 +1,6 @@
 import ImageProfile from "../../assets/images/iv_profile_picture.svg";
 import IconCursor from "../../assets/icons/ic_cursor.svg";
-import IconDocument from "../../assets/icons/ic_document.svg";
+import IconDownload from "../../assets/icons/ic_download.svg";
 import IconMail from "../../assets/icons/ic_mail.svg";
 
 import "./Home.css";
@@ -33,7 +33,9 @@ const HomeSection = () => {
           </div>
         </div>
         <div className="home-content-container">
-          <h1 className="home-identity-text">Hello, I'm Mochammad Adhi Buchori</h1>
+          <h1 className="home-identity-text">
+            Hello, I'm Mochammad Adhi Buchori
+          </h1>
           <TypingRole />
           <p className="home-role-desc-text">
             I craft thoughtful experiences across{" "}
@@ -45,7 +47,7 @@ const HomeSection = () => {
           <HomeStatsSection />
           <div className="home-button-container">
             <div className="home-button-wrapper contained">
-              <img src={IconDocument} alt="Icon Document" />
+              <img src={IconDownload} alt="Icon Document" />
               <p>Download CV</p>
             </div>
             <div className="home-button-wrapper outlined">
