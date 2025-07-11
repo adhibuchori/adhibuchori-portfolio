@@ -14,5 +14,44 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: whitesmoke;
+  background-color: var(--color-background);
+
+  --color-primary-100: #fffff9;
+  --color-primary-200: #eeefe0;
+  --color-primary-300: #d1d8be;
+  --color-primary-400: #a7c1a8;
+  --color-primary-500: #819a91;
+  --color-primary-600: #6a867e;
+  --color-primary-700: #566e68;
+  --color-primary-800: #435752;
+  --color-primary-900: #2f3f3c;
+
+  --color-info: #5d7e96;
+  --color-error: #c75d5d;
+  --color-warning: #d4a24c;
+  --color-success: #6a9d68;
+
+  --color-background: #f5f5f5;
+}
+
+[data-theme="dark"] {
+  --color-primary-100: #a0b0a8;
+  --color-primary-200: #5d6e66;
+  --color-primary-300: #3d4d45;
+  --color-primary-400: #2a332f;
+  --color-primary-500: #1a1f1d;
+  --color-primary-600: #181c1b;
+  --color-primary-700: #131716;
+  --color-primary-800: #0f1312;
+  --color-primary-900: #0b0e0e;
+
+  --color-background: #111412;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
 }
