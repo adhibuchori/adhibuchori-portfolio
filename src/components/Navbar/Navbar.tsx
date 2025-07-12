@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 import NightModeIcon from "../../assets/icons/ic_night_mode.svg";
+import LightModeIcon from "../../assets/icons/ic_light_mode.svg";
 
 // TODO: Implement the functionality for switch theme.
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [theme, setTheme] = useState<"light" | "night">("light");
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -52,6 +54,32 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") as
+      | "light"
+      | "night"
+      | null;
+
+    if (storedTheme) {
+      setTheme(storedTheme);
+      document.documentElement.setAttribute("data-theme", storedTheme);
+    } else {
+      const prefersNight = window.matchMedia(
+        "(prefers-color-scheme: night)"
+      ).matches;
+      const systemTheme = prefersNight ? "night" : "light";
+      setTheme(systemTheme);
+      document.documentElement.setAttribute("data-theme", systemTheme);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "night" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+  };
+
   return (
     <nav className={`navbar glass-effect`}>
       <div className="navbar-container">
@@ -74,12 +102,25 @@ const Navbar = () => {
             </li>
           ))}
           <li className="navbar-item">
-            <img
-              src={NightModeIcon}
-              alt="Icon Night Mode"
-              width={32}
-              height={32}
-            />
+            <label className="theme-toggle">
+              <input
+                type="checkbox"
+                checked={theme === "night"}
+                onChange={toggleTheme}
+              />
+              <div className="toggle-slider">
+                <div className="toggle-knob">
+                  <img
+                    src={theme === "night" ? LightModeIcon : NightModeIcon}
+                    alt={
+                      theme === "night" ? "Light Mode Icon" : "Dark Mode Icon"
+                    }
+                    width={24}
+                    height={24}
+                  />
+                </div>
+              </div>
+            </label>
           </li>
         </ul>
       </div>

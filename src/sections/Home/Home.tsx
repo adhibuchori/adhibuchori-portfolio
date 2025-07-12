@@ -3,6 +3,8 @@ import IconCursor from "../../assets/icons/ic_cursor.svg";
 import IconDownload from "../../assets/icons/ic_download.svg";
 import IconMail from "../../assets/icons/ic_mail.svg";
 
+import IconMailSVG from '../../assets/icons/ic_mail.svg?react';
+
 import "./Home.css";
 
 import TypingRole from "./TypingRole";
@@ -62,6 +64,7 @@ const HomeSection = () => {
             </div>
             <div className="home-button-wrapper glass-effect outlined">
               <img src={IconMail} alt="Icon Mail" />
+              <IconMailSVG/>
               <p>Contact Me</p>
             </div>
           </div>

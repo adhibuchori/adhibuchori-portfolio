@@ -103,6 +103,10 @@
   font-size: 30px;
 }
 
+[data-theme="night"] .home-identity-text {
+  color: white;
+}
+
 .home-role-text {
   font-size: 22px;
   font-weight: 600;
@@ -255,4 +259,20 @@
   border: 2px solid white;
   cursor: pointer;
   transform: scale(1.025);
+}
+
+[data-theme="night"] {
+  .home-stats-text,
+  .home-role-desc-text,
+  .home-role-text,
+  .home-button-wrapper,
+  .home-stats-year-text,
+  .home-stats-desc-text,
+  .home-bubble-wrapper.hovered,
+  .home-bubble-wrapper:hover {
+    color: white;
+  }
+  .home-button-wrapper.contained{
+    background-color: var(--color-primary-300);
+  }
 }
