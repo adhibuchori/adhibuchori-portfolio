@@ -133,3 +133,15 @@
     transform: scale(0.8);
   }
 }
+
+[data-theme="light"] {
+  .icon-tech-stack {
+    color: var(--color-primary-500);
+  }
+}
+
+[data-theme="night"] {
+  .icon-tech-stack {
+    color: white;
+  }
+}

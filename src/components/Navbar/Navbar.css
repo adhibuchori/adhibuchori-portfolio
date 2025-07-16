@@ -18,8 +18,18 @@
   letter-spacing: 0px;
 }
 
-[data-theme="night"] .navbar-title {
-  color: white;
+section[id] {
+  scroll-margin-top: 127px;
+}
+
+.navbar-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.navbar-icon:active {
+  transform: scale(0.95);
 }
 
 .navbar-toggle {
@@ -46,10 +56,6 @@
   transition: transform 0.1s ease-in-out;
 }
 
-[data-theme="night"] .navbar-item {
-  color: white;
-}
-
 .navbar-item.active {
   background-color: var(--color-primary-500);
   color: white;
@@ -58,32 +64,12 @@
   transform: scale(1.025);
 }
 
-[data-theme="night"] .navbar-item.active {
-  background-color: var(--color-primary-300);
-}
-
 .navbar-item:active {
   transform: scale(0.95);
 }
 
 .navbar-toggle-theme {
   cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .navbar-toggle {
-    display: block;
-  }
-
-  .navbar-menu {
-    display: none;
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-
-  .navbar-menu.open {
-    display: flex;
-  }
 }
 
 .theme-toggle {
@@ -120,14 +106,178 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme="night"] .toggle-knob {
-  background-color: var(--color-primary-200);
-}
-
 .theme-toggle input:checked + .toggle-slider .toggle-knob {
   transform: translateX(32px);
 }
 
 .theme-toggle input:checked + .toggle-slider {
   background-color: var(--color-primary-400);
+}
+
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  z-index: 1001;
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sidebar-header h2 {
+  font-size: 16px;
+}
+
+.close-button {
+  background: none;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 999;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.sidebar-item-theme-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0px 20px;
+  color: black;
+  font-size: 16px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.sidebar-item.active {
+  font-weight: 600;
+  background-color: var(--color-primary-500);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  transform: scale(1.015);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+  .navbar-container {
+    margin: 20px 32px;
+  }
+  .navbar-title {
+    font-size: 16px;
+  }
+  .navbar-menu {
+    display: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-menu.open {
+    display: flex;
+  }
+  .navbar-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .sidebar-item,
+  .theme-toggle-text {
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 550px) and (max-width: 1400px) {
+  .navbar-container {
+    margin: 20px 32px;
+  }
+  .navbar-title {
+    font-size: 16px;
+  }
+  .navbar-menu {
+    display: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-menu.open {
+    display: flex;
+  }
+  .navbar-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .sidebar-item,
+  .theme-toggle-text {
+    font-size: 14px;
+  }
+}
+
+[data-theme="night"] {
+  .navbar-title,
+  .navbar-item,
+  .sidebar-item,
+  .theme-toggle-text,
+  .sidebar-header,
+  .close-button,
+  .navbar-toggle,
+  .navbar-icon {
+    color: white;
+  }
+  .navbar-item.active {
+    background-color: var(--color-primary-300);
+  }
+  .toggle-knob {
+    background-color: var(--color-primary-200);
+  }
+}
+
+[data-theme="night"] .mobile-sidebar {
+  background-color: #1e1e1e;
+}
+
+[data-theme="night"] .sidebar-item {
+  color: white;
 }

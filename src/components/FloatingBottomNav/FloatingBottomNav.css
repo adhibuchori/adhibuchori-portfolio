@@ -1,0 +1,40 @@
+.bottom-nav-wrapper {
+  position: fixed;
+  bottom: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 998;
+  pointer-events: none;
+}
+
+.floating-bottom-nav {
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  gap: 24px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.floating-bottom-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: gray;
+}
+
+.floating-bottom-nav-icon:hover {
+  color: black;
+  transform: scale(1.2);
+}
+
+[data-theme="night"] {
+  .floating-bottom-nav-icon {
+    color: #cacaca;
+  }
+  .floating-bottom-nav-icon:hover {
+    color: white;
+  }
+}

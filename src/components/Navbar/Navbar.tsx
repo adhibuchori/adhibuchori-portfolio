@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import NightModeIcon from "../../assets/icons/ic_night_mode.svg";
-import LightModeIcon from "../../assets/icons/ic_light_mode.svg";
+import IconNightMode from "../../assets/icons/ic_night_mode.svg?react";
+import IconLightMode from "../../assets/icons/ic_light_mode.svg?react";
+import IconMenu from "../../assets/icons/ic_menu.svg?react";
+import IconClose from "../../assets/icons/ic_close.svg?react";
 
-// TODO: Implement the functionality for switch theme.
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -81,19 +82,64 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar glass-effect`}>
-      <div className="navbar-container">
-        <h1 className="navbar-title">adhibuchori’s Portfolio</h1>
+    <>
+      <nav className={`navbar glass-effect`}>
+        <div className="navbar-container">
+          <h1 className="navbar-title">adhibuchori’s Portfolio</h1>
 
-        <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
-          ☰
-        </button>
+          <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
+            <IconMenu className="navbar-icon" />
+          </button>
 
-        <ul className={`navbar-menu ${isOpen ? "open" : ""}`}>
+          <ul className={`navbar-menu ${isOpen ? "open" : ""}`}>
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                className={`navbar-item ${
+                  activeSection === item.id ? "active glass-effect" : ""
+                }`}
+                onClick={() => handleScroll(item.id)}
+              >
+                {item.label}
+              </li>
+            ))}
+            <li className="navbar-item">
+              <label className="theme-toggle">
+                <input
+                  type="checkbox"
+                  checked={theme === "night"}
+                  onChange={toggleTheme}
+                />
+                <div className="toggle-slider">
+                  <div className="toggle-knob">
+                    {theme === "night" ? (
+                      <IconLightMode className="navbar-icon" />
+                    ) : (
+                      <IconNightMode className="navbar-icon" />
+                    )}
+                  </div>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {isOpen && <div className="overlay" onClick={() => setIsOpen(false)} />}
+
+      <div className={`mobile-sidebar ${isOpen ? "open" : ""}`}>
+        <div className="sidebar-header">
+          <h2>adhibuchori’s Portfolio</h2>
+          <button className="close-button" onClick={() => setIsOpen(false)}>
+            <IconClose className="navbar-icon" />
+          </button>
+        </div>
+
+        <ul className="sidebar-menu">
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`navbar-item ${
+              className={`sidebar-item ${
                 activeSection === item.id ? "active glass-effect" : ""
               }`}
               onClick={() => handleScroll(item.id)}
@@ -101,7 +147,10 @@ const Navbar = () => {
               {item.label}
             </li>
           ))}
-          <li className="navbar-item">
+          <li className="sidebar-item-theme-toggle">
+            <p className="theme-toggle-text">
+              {theme === "night" ? "Night Mode" : "Light Mode"}
+            </p>
             <label className="theme-toggle">
               <input
                 type="checkbox"
@@ -110,21 +159,18 @@ const Navbar = () => {
               />
               <div className="toggle-slider">
                 <div className="toggle-knob">
-                  <img
-                    src={theme === "night" ? LightModeIcon : NightModeIcon}
-                    alt={
-                      theme === "night" ? "Light Mode Icon" : "Dark Mode Icon"
-                    }
-                    width={24}
-                    height={24}
-                  />
+                  {theme === "night" ? (
+                    <IconLightMode className="navbar-icon" />
+                  ) : (
+                    <IconNightMode className="navbar-icon" />
+                  )}
                 </div>
               </div>
             </label>
           </li>
         </ul>
       </div>
-    </nav>
+    </>
   );
 };
 

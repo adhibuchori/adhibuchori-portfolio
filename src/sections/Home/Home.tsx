@@ -1,9 +1,8 @@
-import ImageProfile from "../../assets/images/iv_profile_picture.svg";
+import ImageProfile from "../../assets/images/iv_profile_picture.jpeg";
+// TODO: Migration Image Icon to Component Icon
 import IconCursor from "../../assets/icons/ic_cursor.svg";
-import IconDownload from "../../assets/icons/ic_download.svg";
-import IconMail from "../../assets/icons/ic_mail.svg";
-
-import IconMailSVG from '../../assets/icons/ic_mail.svg?react';
+import IconDownload from "../../assets/icons/ic_download.svg?react";
+import IconMail from "../../assets/icons/ic_mail.svg?react";
 
 import "./Home.css";
 
@@ -59,13 +58,12 @@ const HomeSection = () => {
           {/* TODO: Add action for buttons. */}
           <div className="home-button-container">
             <div className="home-button-wrapper glass-effect contained">
-              <img src={IconDownload} alt="Icon Document" />
-              <p>Download CV</p>
+              <IconDownload className="home-button-icon" />
+              <p className="home-button-text">Download CV</p>
             </div>
             <div className="home-button-wrapper glass-effect outlined">
-              <img src={IconMail} alt="Icon Mail" />
-              <IconMailSVG/>
-              <p>Contact Me</p>
+              <IconMail className="home-button-icon" />
+              <p className="home-button-text">Contact Me</p>
             </div>
           </div>
         </div>

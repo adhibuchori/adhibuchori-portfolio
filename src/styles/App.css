@@ -5,3 +5,21 @@ main {
 section {
   scroll-margin-top: 88px;
 }
+
+@media (max-width: 540px) {
+  main {
+    padding-top: 72px;
+  }
+  section {
+    scroll-margin-top: 0px;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 1400px) {
+  main {
+    padding-top: 72px;
+  }
+  section {
+    scroll-margin-top: 0px;
+  }
+}

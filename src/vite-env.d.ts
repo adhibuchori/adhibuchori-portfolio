@@ -3,7 +3,7 @@
 svgr({
   // svgr options: https://react-svgr.com/docs/options/
   svgrOptions: {
-    // ...
+    
   },
 
   // esbuild options, to transform jsx to js

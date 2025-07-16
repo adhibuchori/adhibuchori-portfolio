@@ -1,8 +1,8 @@
 import HomeStatCard from "./HomeStatCard"; // sesuaikan path-nya
-import IconWork from "../../../assets/icons/ic_work.svg";
-import IconTechStack from "../../../assets/icons/ic_tech_stack.svg";
-import IconClient from "../../../assets/icons/ic_client.svg";
-import IconProject from "../../../assets/icons/ic_project.svg";
+import IconWork from "../../../assets/icons/ic_work.svg?react";
+import IconTechStack from "../../../assets/icons/ic_tech_stack.svg?react";
+import IconClient from "../../../assets/icons/ic_client.svg?react";
+import IconProject from "../../../assets/icons/ic_project.svg?react";
 
 const stats = [
   {
