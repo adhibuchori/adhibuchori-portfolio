@@ -285,6 +285,9 @@
   .about-me-interest-wrapper {
     width: 100%;
   }
+  .about-me-cta-wrapper {
+    width: 100%;
+  }
   .about-me-button-wrapper {
     width: 100%;
     align-items: center;
@@ -297,6 +300,70 @@
 
 /* Tablet */
 @media (min-width: 550px) and (max-width: 1400px) {
+  #about-me {
+    padding: 0px 24px 24px 24px;
+  }
+  .about-me-content-wrapper,
+  .about-me-value-wrapper,
+  .about-me-interest-wrapper {
+    flex-direction: column;
+  }
+  .about-me-summary-content-wrapper {
+    width: 100%;
+  }
+  .about-me-summary-wrapper,
+  .about-me-interest-content-wrapper {
+    padding: 32px;
+  }
+  .about-me-title-text {
+    font-size: 20px;
+  }
+  .about-me-summary-title-text,
+  .about-me-detail-content-title-text,
+  .about-me-value-desc-text,
+  .about-me-interest-title-text,
+  .about-me-cta-title {
+    font-size: 16px;
+  }
+  .about-me-summary-desc-text,
+  .about-me-detail-content-desc-text,
+  .about-me-interest-desc-text,
+  .about-me-cta-subtitle {
+    font-size: 12px;
+  }
+  .about-me-detail-content-icon,
+  .about-me-button-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .about-me-detail-content-wrapper,
+  .about-me-cta-wrapper {
+    padding: 24px;
+  }
+  .about-me-location-wrapper {
+    padding: 32px;
+  }
+  .about-me-location-pin {
+    padding: 16px;
+  }
+  .about-me-location-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .about-me-interest-wrapper {
+    width: 100%;
+  }
+  .about-me-cta-wrapper {
+    width: 100%;
+  }
+  .about-me-button-wrapper {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-me-button-text {
+    font-size: 14px;
+  }
 }
 
 [data-theme="night"] {
