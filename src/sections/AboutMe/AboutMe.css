@@ -381,10 +381,19 @@
   .about-me-button-icon {
     color: white;
   }
-  .about-me-button-wrapper {
+  .about-me-button-wrapper,
+  .about-me-location-label {
     background-color: var(--color-primary-300);
   }
   .about-me-button-wrapper:hover {
+    border: 2px solid var(--color-primary-100);
+  }
+  .about-me-location-pin {
+    background: linear-gradient(
+      to right,
+      var(--color-primary-200) 25%,
+      var(--color-primary-400) 100%
+    );
     border: 2px solid var(--color-primary-100);
   }
 }
