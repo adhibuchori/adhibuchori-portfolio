@@ -203,6 +203,9 @@ section[id] {
 
 /* Mobile */
 @media (max-width: 540px) {
+  section[id] {
+    scroll-margin-top: 95px;
+  }
   .navbar-container {
     margin: 20px 32px;
   }
@@ -230,6 +233,9 @@ section[id] {
 
 /* Tablet */
 @media (min-width: 550px) and (max-width: 1400px) {
+  section[id] {
+    scroll-margin-top: 95px;
+  }
   .navbar-container {
     margin: 20px 32px;
   }
