@@ -201,7 +201,7 @@
 
 .home-stats-desc-text {
   font-size: 16px;
-  color: #4b4b4b;
+  color: var(--color-desc-text) !important;
 }
 
 .home-button-container {
