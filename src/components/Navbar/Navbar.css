@@ -261,7 +261,7 @@ section[id] {
   }
 }
 
-[data-theme="night"] {
+[data-theme="dark"] {
   .navbar-title,
   .navbar-item,
   .sidebar-item,
@@ -280,10 +280,10 @@ section[id] {
   }
 }
 
-[data-theme="night"] .mobile-sidebar {
+[data-theme="dark"] .mobile-sidebar {
   background-color: #1e1e1e;
 }
 
-[data-theme="night"] .sidebar-item {
+[data-theme="dark"] .sidebar-item {
   color: white;
 }

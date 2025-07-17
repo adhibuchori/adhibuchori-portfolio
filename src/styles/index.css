@@ -37,7 +37,7 @@
   --color-background: #f5f5f5;
 }
 
-[data-theme="night"] {
+[data-theme="dark"] {
   --color-primary-100: #a0b0a8;
   --color-primary-200: #5d6e66;
   --color-primary-300: #3d4d45;

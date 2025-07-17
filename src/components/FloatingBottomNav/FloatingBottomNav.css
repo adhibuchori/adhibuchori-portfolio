@@ -30,7 +30,7 @@
   transform: scale(1.2);
 }
 
-[data-theme="night"] {
+[data-theme="dark"] {
   .floating-bottom-nav-icon {
     color: #cacaca;
   }

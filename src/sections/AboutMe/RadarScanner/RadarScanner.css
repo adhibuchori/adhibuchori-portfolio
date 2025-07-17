@@ -140,7 +140,7 @@
   }
 }
 
-[data-theme="night"] {
+[data-theme="dark"] {
   .icon-tech-stack {
     color: white;
   }

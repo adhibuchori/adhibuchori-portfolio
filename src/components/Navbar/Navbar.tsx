@@ -8,7 +8,7 @@ import IconClose from "../../assets/icons/ic_close.svg?react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [theme, setTheme] = useState<"light" | "night">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -58,24 +58,24 @@ const Navbar = () => {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") as
       | "light"
-      | "night"
+      | "dark"
       | null;
 
     if (storedTheme) {
       setTheme(storedTheme);
       document.documentElement.setAttribute("data-theme", storedTheme);
     } else {
-      const prefersNight = window.matchMedia(
-        "(prefers-color-scheme: night)"
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
       ).matches;
-      const systemTheme = prefersNight ? "night" : "light";
+      const systemTheme = prefersDark ? "dark" : "light";
       setTheme(systemTheme);
       document.documentElement.setAttribute("data-theme", systemTheme);
     }
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "night" : "light";
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
@@ -107,12 +107,12 @@ const Navbar = () => {
               <label className="theme-toggle">
                 <input
                   type="checkbox"
-                  checked={theme === "night"}
+                  checked={theme === "dark"}
                   onChange={toggleTheme}
                 />
                 <div className="toggle-slider">
                   <div className="toggle-knob">
-                    {theme === "night" ? (
+                    {theme === "dark" ? (
                       <IconLightMode className="navbar-icon" />
                     ) : (
                       <IconNightMode className="navbar-icon" />
@@ -149,17 +149,17 @@ const Navbar = () => {
           ))}
           <li className="sidebar-item-theme-toggle">
             <p className="theme-toggle-text">
-              {theme === "night" ? "Night Mode" : "Light Mode"}
+              {theme === "dark" ? "Night Mode" : "Light Mode"}
             </p>
             <label className="theme-toggle">
               <input
                 type="checkbox"
-                checked={theme === "night"}
+                checked={theme === "dark"}
                 onChange={toggleTheme}
               />
               <div className="toggle-slider">
                 <div className="toggle-knob">
-                  {theme === "night" ? (
+                  {theme === "dark" ? (
                     <IconLightMode className="navbar-icon" />
                   ) : (
                     <IconNightMode className="navbar-icon" />
