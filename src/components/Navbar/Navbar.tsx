@@ -61,16 +61,28 @@ const Navbar = () => {
       | "dark"
       | null;
 
+    const applyTheme = (newTheme: "light" | "dark") => {
+      setTheme(newTheme);
+      document.documentElement.setAttribute("data-theme", newTheme);
+    };
+
     if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.setAttribute("data-theme", storedTheme);
+      applyTheme(storedTheme);
     } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      const systemTheme = prefersDark ? "dark" : "light";
-      setTheme(systemTheme);
-      document.documentElement.setAttribute("data-theme", systemTheme);
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const systemTheme = mediaQuery.matches ? "dark" : "light";
+      applyTheme(systemTheme);
+
+      const handleChange = (e: MediaQueryListEvent) => {
+        const newTheme = e.matches ? "dark" : "light";
+        applyTheme(newTheme);
+      };
+
+      mediaQuery.addEventListener("change", handleChange);
+
+      return () => {
+        mediaQuery.removeEventListener("change", handleChange);
+      };
     }
   }, []);
 
