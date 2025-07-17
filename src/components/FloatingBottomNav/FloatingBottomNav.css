@@ -44,6 +44,14 @@
 
 /* Tablet */
 @media (min-width: 550px) and (max-width: 1400px) {
+  .floating-bottom-nav {
+    padding: 12px 20px;
+    gap: 20px;
+  }
+  .floating-bottom-nav-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 [data-theme="dark"] {
