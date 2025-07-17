@@ -14,8 +14,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color-scheme: only light;
   background-color: var(--color-background);
-  color-scheme: light dark;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -39,6 +39,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: only dark;
   --color-primary-100: #a0b0a8;
   --color-primary-200: #5d6e66;
   --color-primary-300: #3d4d45;
