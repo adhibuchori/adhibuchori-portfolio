@@ -30,6 +30,22 @@
   transform: scale(1.2);
 }
 
+/* Mobile */
+@media (max-width: 540px) {
+  .floating-bottom-nav {
+    padding: 12px 20px;
+    gap: 20px;
+  }
+  .floating-bottom-nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 550px) and (max-width: 1400px) {
+}
+
 [data-theme="dark"] {
   .floating-bottom-nav-icon {
     color: #cacaca;
