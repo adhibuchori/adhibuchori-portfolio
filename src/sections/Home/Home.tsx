@@ -57,14 +57,14 @@ const HomeSection = () => {
           <HomeStatsSection />
           {/* TODO: Add action for buttons. */}
           <div className="home-button-container">
-            <div className="home-button-wrapper glass-effect contained">
+            <button className="home-button-wrapper glass-effect contained">
               <IconDownload className="home-button-icon" />
               <p className="home-button-text">Download CV</p>
-            </div>
-            <div className="home-button-wrapper glass-effect outlined">
+            </button>
+            <button className="home-button-wrapper glass-effect outlined">
               <IconMail className="home-button-icon" />
               <p className="home-button-text">Contact Me</p>
-            </div>
+            </button>
           </div>
         </div>
       </div>

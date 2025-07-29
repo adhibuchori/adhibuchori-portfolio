@@ -1,4 +1,84 @@
+#tech-stack {
+  padding: 0px 72px 24px 72px;
+}
+
 .tech-stack-container {
   height: 1000px;
-  background-color: var(--color-primary-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.tech-stack-title-text {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.tech-stack-tabs {
+  display: flex;
+  gap: 24px;
+  border-radius: 40px;
+  padding: 12px 12px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  justify-content: center;
+  position: relative;
+}
+
+.tech-stack-tab-btn {
+  position: relative;
+  background: transparent;
+  color: #4b4b4b;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: color 0.3s;
+  z-index: 1;
+}
+
+.tech-stack-tab-btn.active {
+  background: transparent;
+  color: white;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.tech-stack-tab-indicator-pill {
+  position: absolute;
+  height: 80%;
+  top: 10%;
+  border-radius: 40px;
+  background: var(--color-primary-500);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+@media (max-width: 540px) {
+  #tech-stack {
+    padding: 0px 24px 24px 24px;
+  }
+  .tech-stack-title-text {
+    font-size: 20px;
+  }
+  .tech-stack-tabs {
+    width: 100%;
+    border-radius: 8px;
+    gap: 0px;
+    padding: 8px;
+  }
+  .tech-stack-tab-btn {
+    font-size: 12px;
+    padding: 8px 2px;
+    flex: 1 1 auto;
+  }
+  .tech-stack-tab-indicator-pill {
+    border-radius: 8px;
+  }
 }
