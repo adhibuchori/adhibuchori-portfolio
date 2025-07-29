@@ -2,10 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import IconShowLess from "../../assets/icons/ic_show_less.svg?react";
 import IconShowMore from "../../assets/icons/ic_show_more.svg?react";
 
-import { experiences } from "./Experience/ExperiencesData";
+import { experiences } from "./Experience/ExperienceData";
 
 import "./MyJourney.css";
 import ExperienceItem from "./Experience/ExperienceItem";
+import EducationItem from "./Education/EducationItem";
+import { educations } from "./Education/EducationData";
 
 const TABS = [
   { label: "Experiences", key: "experiences" },
@@ -88,7 +90,11 @@ const MyJourneySection = () => {
           ))}
         </div>
         <div
-          className={`my-journey-experience-container tab-content fade-in`}
+          className={`my-journey-experience-container tab-content fade-in ${
+            activeTab === "education" || activeTab === "certifications"
+              ? "hide-before"
+              : ""
+          }`}
           style={{
             maxHeight: showMore ? "none" : "1000px",
             overflow: showMore ? "visible" : "hidden",
@@ -135,7 +141,13 @@ const MyJourneySection = () => {
                 </div>
               </div>
             ))}
-          {activeTab === "education" && <p>Education</p>}
+          {activeTab === "education" && (
+            <div className="my-journey-education-container">
+              {educations.map((edu, index) => (
+                <EducationItem key={index} edu={edu} />
+              ))}
+            </div>
+          )}
           {activeTab === "certifications" && <p>Certifications</p>}
           {activeTab === "volunteer" && <p>Volunteer</p>}
         </div>

@@ -52,6 +52,10 @@
   z-index: 1;
 }
 
+.my-journey-experience-container.hide-before::before {
+  display: none;
+}
+
 .my-journey-experience-item {
   margin-bottom: 48px;
 }
@@ -116,7 +120,8 @@
   margin-bottom: 16px;
 }
 
-.my-journey-experience-image {
+.my-journey-experience-image,
+.my-journey-education-image {
   width: 56px;
   height: 56px;
   border-radius: 16%;
@@ -124,13 +129,15 @@
   border: 2px solid rgb(237, 237, 237);
 }
 
-.my-journey-experience-title {
+.my-journey-experience-title,
+.my-journey-education-title {
   font-size: 19px;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.my-journey-experience-company {
+.my-journey-experience-company,
+.my-journey-education-degree {
   font-size: 16px;
   color: #4b4b4b;
   font-weight: 600;
@@ -200,6 +207,42 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.my-journey-education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.my-journey-education-item {
+  padding: 24px;
+  border-radius: 16px;
+  width: 56%;
+}
+
+.my-journey-education-header-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.my-journey-education-grade {
+  color: #4b4b4b;
+  font-size: 14px;
+}
+
+.my-journey-education-duration {
+  color: #4b4b4b;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.my-journey-experience-activities {
+  line-height: 200%;
+  font-size: 14px;
+  text-align: justify;
 }
 
 .my-journey-gradient-fade {
@@ -375,7 +418,10 @@
   .my-journey-experience-container::before {
     left: 0;
     transform: none;
-    height: 99.60%;
+    height: 99.6%;
+  }
+  .my-journey-experience-container.hide-before::before {
+    display: none;
   }
   .my-journey-experience-item.left::before,
   .my-journey-experience-item.right::before {
@@ -386,17 +432,26 @@
   .my-journey-experience-content {
     margin-left: 40px;
   }
-  .my-journey-experience-title {
+  .my-journey-experience-title,
+  .my-journey-education-title {
     font-size: 16px;
   }
-  .my-journey-experience-company {
+  .my-journey-experience-company,
+  .my-journey-education-degree {
     font-size: 14px;
   }
   .my-journey-experience-skill-chip,
   .my-journey-experience-date,
   .my-journey-experience-points li,
-  .my-journey-experience-location {
+  .my-journey-experience-location,
+  .my-journey-education-duration,
+  .my-journey-education-grade,
+  .my-journey-experience-activities,
+  .my-journey-experience-points li::before {
     font-size: 12px;
+  }
+  .my-journey-education-item {
+    width: 100%;
   }
   .my-journey-show-btn {
     font-size: 14px;
@@ -438,6 +493,9 @@
     transform: none;
     height: 99.25%;
   }
+  .my-journey-experience-container.hide-before::before {
+    display: none;
+  }
   .my-journey-experience-item.left::before,
   .my-journey-experience-item.right::before {
     left: 0;
@@ -447,17 +505,26 @@
   .my-journey-experience-content {
     margin-left: 40px;
   }
-  .my-journey-experience-title {
+  .my-journey-experience-title,
+  .my-journey-education-title {
     font-size: 16px;
   }
-  .my-journey-experience-company {
+  .my-journey-experience-company,
+  .my-journey-education-degree {
     font-size: 14px;
   }
   .my-journey-experience-skill-chip,
   .my-journey-experience-date,
   .my-journey-experience-points li,
-  .my-journey-experience-location {
+  .my-journey-experience-location,
+  .my-journey-education-duration,
+  .my-journey-education-grade,
+  .my-journey-experience-activities,
+  .my-journey-experience-points li::before {
     font-size: 12px;
+  }
+  .my-journey-education-item {
+    width: 100%;
   }
   .my-journey-show-btn {
     font-size: 14px;
@@ -474,7 +541,11 @@
   .my-journey-experience-date,
   .my-journey-experience-location,
   .my-journey-experience-points li,
-  .my-journey-experience-skill-chip {
+  .my-journey-experience-skill-chip,
+  .my-journey-education-title,
+  .my-journey-education-degree,
+  .my-journey-education-duration,
+  .my-journey-education-grade {
     color: white;
   }
   .my-journey-tab-indicator-pill,
