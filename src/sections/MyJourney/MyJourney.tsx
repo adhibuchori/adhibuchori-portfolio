@@ -26,6 +26,7 @@ const MyJourneySection = () => {
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -82,6 +83,7 @@ const MyJourneySection = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 540);
+      setIsTablet(window.innerWidth > 540 && window.innerWidth <= 1024);
     };
 
     handleResize();
@@ -101,7 +103,9 @@ const MyJourneySection = () => {
     if (newPage !== currentPage) {
       setCurrentPage(newPage);
     }
-    scrollToTabs();
+    if (isMobile || isTablet) {
+      scrollToTabs();
+    }
   };
 
   return (
