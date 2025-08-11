@@ -601,7 +601,7 @@
   .my-journey-tabs {
     width: 100%;
     gap: 0px;
-    padding: 12px 6px 12px 6px;
+    padding: 12px 6px 12px 10vw;
     margin: 0px;
 
     overflow-x: auto;
@@ -729,6 +729,13 @@
 @media (max-width: 406px) {
   .my-journey-tabs {
     padding-left: 46vw;
+  }
+}
+
+/* Mobile max-width: 400px*/
+@media (max-width: 400px) {
+  .my-journey-tabs {
+    padding-left: 48vw;
   }
 }
 
