@@ -8,12 +8,16 @@ import "./MyJourney.css";
 import ExperienceItem from "./Experience/ExperienceItem";
 import EducationItem from "./Education/EducationItem";
 import { educations } from "./Education/EducationData";
+import CertificationItem from "./Certification/CertificationItem";
+import { certifications } from "./Certification/CertificationData";
+import CertificationPagination from "./Certification/CertificationPagination";
 
 const TABS = [
   { label: "Experiences", key: "experiences" },
   { label: "Education", key: "education" },
   { label: "Certifications", key: "certifications" },
   { label: "Volunteer", key: "volunteer" },
+  { label: "Honors & Awards", key: "honorAndAwards" },
 ];
 
 const MyJourneySection = () => {
@@ -21,8 +25,41 @@ const MyJourneySection = () => {
   const [showMore, setShowMore] = useState(false);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-  const sectionRef = useRef<HTMLElement | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const tabsRef = useRef<HTMLDivElement | null>(null);
+
+  const itemsPerPage = 6;
+
+  const reversedCertifications = [...certifications].reverse();
+
+  const totalPages = Math.ceil(reversedCertifications.length / itemsPerPage);
+  const paginatedCertifications = reversedCertifications.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const isOverflowVisible =
+    activeTab === "certifications" || activeTab === "education" || showMore;
+
+  const isHeightMax =
+    activeTab === "certifications" || activeTab === "education" || showMore;
+
+  const handleShowMoreToggle = () => {
+    setShowMore((prev) => {
+      if (prev && sectionRef.current) {
+        setTimeout(() => {
+          sectionRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 0);
+      }
+      return !prev;
+    });
+  };
 
   useEffect(() => {
     const updateIndicator = () => {
@@ -43,12 +80,6 @@ const MyJourneySection = () => {
   }, [activeTab]);
 
   useEffect(() => {
-    if (!showMore && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [showMore]);
-
-  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 540);
     };
@@ -58,14 +89,26 @@ const MyJourneySection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const scrollToTabs = (offset = 94) => {
+    if (tabsRef.current) {
+      const top =
+        tabsRef.current.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage !== currentPage) {
+      setCurrentPage(newPage);
+    }
+    scrollToTabs();
+  };
+
   return (
     <section id="my-journey" ref={sectionRef}>
       <div className="my-journey-container">
         <p className="my-journey-title-text">My Journey</p>
-        <div
-          className="my-journey-tabs glass-effect"
-          style={{ position: "relative" }}
-        >
+        <div className="my-journey-tabs glass-effect" ref={tabsRef}>
           <div
             className="my-journey-tab-indicator-pill glass-effect"
             style={{
@@ -90,14 +133,14 @@ const MyJourneySection = () => {
           ))}
         </div>
         <div
-          className={`my-journey-experience-container tab-content fade-in ${
+          className={`my-journey-tab-container tab-content fade-in ${
             activeTab === "education" || activeTab === "certifications"
               ? "hide-before"
               : ""
           }`}
           style={{
-            maxHeight: showMore ? "none" : "1000px",
-            overflow: showMore ? "visible" : "hidden",
+            maxHeight: isHeightMax ? "none" : "1000px",
+            overflow: isOverflowVisible ? "visible" : "hidden",
           }}
         >
           {activeTab === "experiences" &&
@@ -148,8 +191,22 @@ const MyJourneySection = () => {
               ))}
             </div>
           )}
-          {activeTab === "certifications" && <p>Certifications</p>}
+          {activeTab === "certifications" && (
+            <div>
+              <div className="my-journey-certification-container">
+                {paginatedCertifications.map((cert, idx) => (
+                  <CertificationItem cert={cert} key={idx} />
+                ))}
+              </div>
+              <CertificationPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            </div>
+          )}
           {activeTab === "volunteer" && <p>Volunteer</p>}
+          {activeTab === "honorAndAwards" && <p>Honor and Awards</p>}
         </div>
         {(activeTab === "experiences" || activeTab === "volunteer") &&
           !showMore && <div className="my-journey-gradient-fade" />}
@@ -158,7 +215,7 @@ const MyJourneySection = () => {
           <div className="my-journey-show-more-btn-container">
             <button
               className="my-journey-show-btn glass-effect"
-              onClick={() => setShowMore((prev) => !prev)}
+              onClick={handleShowMoreToggle}
               type="button"
             >
               {showMore ? (

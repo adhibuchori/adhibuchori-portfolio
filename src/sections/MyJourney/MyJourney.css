@@ -33,12 +33,12 @@
   padding-left: 48px;
 }
 
-.my-journey-experience-container {
+.my-journey-tab-container {
   position: relative;
   width: 100%;
 }
 
-.my-journey-experience-container::before {
+.my-journey-tab-container::before {
   content: "";
   position: absolute;
   width: 5px;
@@ -52,7 +52,7 @@
   z-index: 1;
 }
 
-.my-journey-experience-container.hide-before::before {
+.my-journey-tab-container.hide-before::before {
   display: none;
 }
 
@@ -121,7 +121,8 @@
 }
 
 .my-journey-experience-image,
-.my-journey-education-image {
+.my-journey-education-image,
+.my-journey-certification-image {
   width: 56px;
   height: 56px;
   border-radius: 16%;
@@ -191,7 +192,8 @@
   gap: 16px;
 }
 
-.my-journey-experience-skill-chip {
+.my-journey-experience-skill-chip,
+.my-journey-certification-skill-chip {
   padding: 8px 16px;
   border-radius: 24px;
   font-size: 14px;
@@ -199,7 +201,8 @@
   color: gray;
 }
 
-.my-journey-experience-skill-chip:hover {
+.my-journey-experience-skill-chip:hover,
+.my-journey-certification-skill-chip:hover {
   color: black;
 }
 
@@ -239,10 +242,220 @@
   margin-bottom: 8px;
 }
 
-.my-journey-experience-activities {
+.my-journey-education-activities {
   line-height: 200%;
   font-size: 14px;
   text-align: justify;
+}
+
+.my-journey-certification-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 24px;
+  min-height: 559.8px;
+}
+
+.my-journey-certification-item {
+  padding: 24px;
+  border-radius: 16px;
+  height: fit-content;
+}
+
+.my-journey-certification-header-container {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.my-journey-certification-title {
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  line-height: 160%;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  box-orient: vertical;
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.my-journey-certification-title:hover::before {
+  content: attr(data-full-text);
+
+  position: absolute;
+  top: 56px;
+  left: 96px;
+
+  max-width: 64%;
+  margin-top: 4px;
+  padding: 8px 12px;
+  padding-left: 36px;
+  border-radius: 6px;
+
+  background-color: var(--color-info);
+  background-image: url("../../assets/icons/ic_info.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.my-journey-certification-detail-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-journey-certification-issuer,
+.my-journey-certification-dates,
+.my-journey-certification-id {
+  font-size: 14px;
+  color: gray;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  box-orient: vertical;
+  overflow: hidden;
+}
+
+.my-journey-certification-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  padding: 8px 16px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  border-radius: 999px;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary-500);
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.my-journey-certification-button:hover {
+  background-color: rgba(61, 77, 69, 0.08);
+  border: 2px solid white;
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+.my-journey-certification-button-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.my-journey-certification-button-space {
+  height: 37.5px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.my-journey-certification-skills-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.my-journey-certification-skills-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.my-journey-certification-skills {
+  display: flex;
+  font-size: 13px;
+  gap: 12px;
+  color: #555;
+}
+
+.my-journey-certification-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.my-journey-certification-pagination-btn {
+  background-color: #6b8f8f;
+  color: white;
+  display: flex;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out background-color 0.2s ease;
+}
+
+.my-journey-certification-pagination-btn:hover {
+  background-color: var(--color-primary-600);
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+.my-journey-certification-pagination-btn.is-disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.my-journey-certification-pagination-page {
+  display: flex;
+  width: 100px;
+  gap: 8px;
+  justify-content: center;
+  align-items: baseline;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.my-journey-certification-pagination-current,
+.my-journey-certification-pagination-total {
+  display: flex;
+  font-size: 20px;
+  width: 32px;
+  justify-content: center;
+}
+
+.my-journey-certification-pagination-of {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.my-journey-certification-pagination-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .my-journey-gradient-fade {
@@ -263,7 +476,7 @@
   display: flex;
   gap: 24px;
   border-radius: 40px;
-  padding: 12px 12px;
+  padding: 12px 8px;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
   justify-content: center;
@@ -387,18 +600,24 @@
   }
   .my-journey-tabs {
     width: 100%;
-    border-radius: 8px;
     gap: 0px;
-    padding: 12px 6px;
+    padding: 12px 6px 12px 6px;
     margin: 0px;
+
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .my-journey-tabs::-webkit-scrollbar {
+    display: none;
   }
   .my-journey-tab-btn {
+    display: inline-block;
     font-size: 12px;
-    padding: 8px 2px;
+    padding: 6px 16px;
     flex: 1 2 auto;
-  }
-  .my-journey-tab-indicator-pill {
-    border-radius: 8px;
+    white-space: nowrap;
   }
   .my-journey-experience-grid {
     display: flex;
@@ -414,12 +633,12 @@
   .my-journey-experience-item {
     margin-bottom: 32px;
   }
-  .my-journey-experience-container::before {
+  .my-journey-tab-container::before {
     left: 0;
     transform: none;
     height: 99.6%;
   }
-  .my-journey-experience-container.hide-before::before {
+  .my-journey-tab-container.hide-before::before {
     display: none;
   }
   .my-journey-experience-item.left::before,
@@ -432,7 +651,8 @@
     margin-left: 40px;
   }
   .my-journey-experience-title,
-  .my-journey-education-title {
+  .my-journey-education-title,
+  .my-journey-certification-title {
     font-size: 16px;
   }
   .my-journey-experience-company,
@@ -440,13 +660,18 @@
     font-size: 14px;
   }
   .my-journey-experience-skill-chip,
+  .my-journey-certification-skill-chip,
   .my-journey-experience-date,
   .my-journey-experience-points li,
   .my-journey-experience-location,
   .my-journey-education-duration,
   .my-journey-education-grade,
-  .my-journey-experience-activities,
-  .my-journey-experience-points li::before {
+  .my-journey-education-activities,
+  .my-journey-experience-points li::before,
+  .my-journey-certification-issuer,
+  .my-journey-certification-dates,
+  .my-journey-certification-id,
+  .my-journey-certification-button {
     font-size: 12px;
   }
   .my-journey-education-item {
@@ -458,6 +683,66 @@
   .my-journey-gradient-fade {
     margin-top: -80px;
     height: 80px;
+  }
+  .my-journey-certification-container {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    min-height: 0px;
+    place-content: start center;
+  }
+  .my-journey-certification-button-space {
+    height: 35px;
+  }
+  .my-journey-certification-item {
+    width: 100%;
+  }
+}
+
+/* Mobile max-width: 430px*/
+@media (max-width: 430px) {
+  .my-journey-tabs {
+    padding-left: 38.5vw;
+  }
+}
+
+/* Mobile max-width: 414px*/
+@media (max-width: 414px) {
+  .my-journey-tabs {
+    padding-left: 43.5vw;
+  }
+}
+
+/* Mobile max-width: 412px*/
+@media (max-width: 412px) {
+  .my-journey-tabs {
+    padding-left: 45vw;
+  }
+}
+
+/* Mobile max-width: 390px*/
+@media (max-width: 390px) {
+  .my-journey-tabs {
+    padding-left: 53vw;
+  }
+}
+
+/* Mobile max-width: 375px*/
+@media (max-width: 375px) {
+  .my-journey-tabs {
+    padding-left: 58.5vw;
+  }
+}
+
+/* Mobile max-width: 360px*/
+@media (max-width: 360px) {
+  .my-journey-tabs {
+    padding-left: 65vw;
+  }
+}
+
+/* Mobile max-width: 344px*/
+@media (max-width: 344px) {
+  .my-journey-tabs {
+    padding-left: 72vw;
   }
 }
 
@@ -472,8 +757,25 @@
   .my-journey-title-text {
     font-size: 20px;
   }
+  .my-journey-tabs {
+    gap: 0px;
+    padding: 12px 6px 12px 6px;
+    margin: 0px;
+
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .my-journey-tabs::-webkit-scrollbar {
+    display: none;
+  }
   .my-journey-tab-btn {
-    font-size: 16px;
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 16px;
+    flex: 1 2 auto;
+    white-space: nowrap;
   }
   .my-journey-experience-grid {
     display: flex;
@@ -482,17 +784,19 @@
   .my-journey-experience-left-column,
   .my-journey-experience-right-column {
     padding: 0;
-    margin: 0;
+  }
+  .my-journey-experience-right-column {
+    margin-top: 0;
   }
   .my-journey-experience-item {
     margin-bottom: 32px;
   }
-  .my-journey-experience-container::before {
+  .my-journey-tab-container::before {
     left: 0;
     transform: none;
-    height: 99.25%;
+    height: 99.6%;
   }
-  .my-journey-experience-container.hide-before::before {
+  .my-journey-tab-container.hide-before::before {
     display: none;
   }
   .my-journey-experience-item.left::before,
@@ -513,12 +817,13 @@
     font-size: 14px;
   }
   .my-journey-experience-skill-chip,
+  .my-journey-certification-skill-chip,
   .my-journey-experience-date,
   .my-journey-experience-points li,
   .my-journey-experience-location,
   .my-journey-education-duration,
   .my-journey-education-grade,
-  .my-journey-experience-activities,
+  .my-journey-education-activities,
   .my-journey-experience-points li::before {
     font-size: 12px;
   }
@@ -540,21 +845,34 @@
   .my-journey-experience-date,
   .my-journey-experience-location,
   .my-journey-experience-points li,
-  .my-journey-experience-skill-chip,
   .my-journey-education-title,
   .my-journey-education-degree,
   .my-journey-education-duration,
-  .my-journey-education-grade {
+  .my-journey-education-grade,
+  .my-journey-certification-issuer,
+  .my-journey-certification-dates,
+  .my-journey-certification-id,
+  .my-journey-certification-button,
+  .my-journey-experience-skill-chip:hover,
+  .my-journey-certification-skill-chip:hover {
     color: white;
+  }
+  .my-journey-experience-skill-chip,
+  .my-journey-certification-skill-chip {
+    color: gainsboro;
   }
   .my-journey-tab-indicator-pill,
   .my-journey-show-btn,
   .my-journey-experience-item.left::before,
-  .my-journey-experience-item.right::before {
+  .my-journey-experience-item.right::before,
+  .my-journey-certification-pagination-btn {
     background: var(--color-primary-300);
   }
-
   .my-journey-show-btn {
     border: 2px solid var(--color-primary-100);
+  }
+  .my-journey-certification-pagination-btn.is-disabled {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
   }
 }

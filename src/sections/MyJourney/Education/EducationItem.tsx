@@ -30,7 +30,7 @@ const EducationItem = ({ edu }: { edu: EducationType }) => {
         </ol>
       )}
       {edu.activities && (
-        <p className="my-journey-experience-activities">
+        <p className="my-journey-education-activities">
           Activities and societies: {edu.activities.join(", ")}
         </p>
       )}
