@@ -725,6 +725,13 @@
   }
 }
 
+/* Mobile max-width: 406px*/
+@media (max-width: 406px) {
+  .my-journey-tabs {
+    padding-left: 46vw;
+  }
+}
+
 /* Mobile max-width: 390px*/
 @media (max-width: 390px) {
   .my-journey-tabs {
