@@ -476,11 +476,19 @@
   display: flex;
   gap: 24px;
   border-radius: 40px;
-  padding: 12px 8px;
+  padding: 0px 0px;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
   justify-content: center;
   position: relative;
+}
+
+.my-journey-tab-btn-wrapper {
+  position: relative;
+  margin: 0px 8px;
+  padding: 16px 0px;
+  border-radius: 24px;
+  display: flex;
 }
 
 .my-journey-tab-btn {
@@ -601,15 +609,20 @@
   .my-journey-tabs {
     width: 100%;
     gap: 0px;
-    padding: 12px 6px 12px 10vw;
+    padding: 0px;
     margin: 0px;
-
+  }
+  .my-journey-tab-btn-wrapper {
+    position: relative;
+    margin: 0px 8px;
+    padding: 16px 0px;
+    border-radius: 24px;
+    display: flex;
     overflow-x: auto;
-    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  .my-journey-tabs::-webkit-scrollbar {
+  .my-journey-tab-btn-wrapper::-webkit-scrollbar {
     display: none;
   }
   .my-journey-tab-btn {
@@ -697,76 +710,6 @@
   }
 }
 
-/* Mobile max-width: 430px*/
-@media (max-width: 430px) {
-  .my-journey-tabs {
-    padding-left: 38.5vw;
-  }
-}
-
-/* Mobile max-width: 420px*/
-@media (max-width: 420px) {
-  .my-journey-tabs {
-    padding-left: 42vw;
-  }
-}
-
-/* Mobile max-width: 414px*/
-@media (max-width: 414px) {
-  .my-journey-tabs {
-    padding-left: 43.5vw;
-  }
-}
-
-/* Mobile max-width: 412px*/
-@media (max-width: 412px) {
-  .my-journey-tabs {
-    padding-left: 45vw;
-  }
-}
-
-/* Mobile max-width: 406px*/
-@media (max-width: 406px) {
-  .my-journey-tabs {
-    padding-left: 46vw;
-  }
-}
-
-/* Mobile max-width: 400px*/
-@media (max-width: 400px) {
-  .my-journey-tabs {
-    padding-left: 48vw;
-  }
-}
-
-/* Mobile max-width: 390px*/
-@media (max-width: 390px) {
-  .my-journey-tabs {
-    padding-left: 53vw;
-  }
-}
-
-/* Mobile max-width: 375px*/
-@media (max-width: 375px) {
-  .my-journey-tabs {
-    padding-left: 58.5vw;
-  }
-}
-
-/* Mobile max-width: 360px*/
-@media (max-width: 360px) {
-  .my-journey-tabs {
-    padding-left: 65vw;
-  }
-}
-
-/* Mobile max-width: 344px*/
-@media (max-width: 344px) {
-  .my-journey-tabs {
-    padding-left: 72vw;
-  }
-}
-
 /* Tablet */
 @media (min-width: 550px) and (max-width: 1400px) {
   #my-journey {
@@ -780,15 +723,20 @@
   }
   .my-journey-tabs {
     gap: 0px;
-    padding: 12px 6px 12px 6px;
+    padding: 0px;
     margin: 0px;
-
+  }
+  .my-journey-tab-btn-wrapper {
+    position: relative;
+    margin: 0px 8px;
+    padding: 16px 0px;
+    border-radius: 24px;
+    display: flex;
     overflow-x: auto;
-    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  .my-journey-tabs::-webkit-scrollbar {
+  .my-journey-tab-btn-wrapper::-webkit-scrollbar {
     display: none;
   }
   .my-journey-tab-btn {

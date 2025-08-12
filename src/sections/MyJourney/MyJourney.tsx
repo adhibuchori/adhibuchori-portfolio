@@ -23,14 +23,15 @@ const TABS = [
 const MyJourneySection = () => {
   const [activeTab, setActiveTab] = useState("experiences");
   const [showMore, setShowMore] = useState(false);
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
   const sectionRef = useRef<HTMLElement | null>(null);
-  const tabsRef = useRef<HTMLDivElement | null>(null);
+  const tabsContainerRef = useRef<HTMLDivElement | null>(null);
+  const tabWrapperRef = useRef<HTMLDivElement | null>(null);
+  const tabButtonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const itemsPerPage = 6;
 
@@ -65,7 +66,7 @@ const MyJourneySection = () => {
   useEffect(() => {
     const updateIndicator = () => {
       const activeIndex = TABS.findIndex((tab) => tab.key === activeTab);
-      const activeBtn = tabRefs.current[activeIndex];
+      const activeBtn = tabButtonRefs.current[activeIndex];
       if (activeBtn) {
         setIndicatorStyle({
           left: activeBtn.offsetLeft,
@@ -92,9 +93,11 @@ const MyJourneySection = () => {
   }, []);
 
   const scrollToTabs = (offset = 94) => {
-    if (tabsRef.current) {
+    if (tabsContainerRef.current) {
       const top =
-        tabsRef.current.getBoundingClientRect().top + window.scrollY - offset;
+        tabsContainerRef.current.getBoundingClientRect().top +
+        window.scrollY -
+        offset;
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
@@ -112,29 +115,31 @@ const MyJourneySection = () => {
     <section id="my-journey" ref={sectionRef}>
       <div className="my-journey-container">
         <p className="my-journey-title-text">My Journey</p>
-        <div className="my-journey-tabs glass-effect" ref={tabsRef}>
-          <div
-            className="my-journey-tab-indicator-pill glass-effect"
-            style={{
-              left: indicatorStyle.left,
-              width: indicatorStyle.width,
-            }}
-          />
-          {TABS.map((tab, idx) => (
-            <button
-              key={tab.key}
-              ref={(el) => {
-                tabRefs.current[idx] = el;
+        <div className="my-journey-tabs glass-effect" ref={tabsContainerRef}>
+          <div className="my-journey-tab-btn-wrapper" ref={tabWrapperRef}>
+            <div
+              className="my-journey-tab-indicator-pill glass-effect"
+              style={{
+                left: indicatorStyle.left,
+                width: indicatorStyle.width,
               }}
-              className={`my-journey-tab-btn ${
-                activeTab === tab.key ? "active" : ""
-              }`}
-              onClick={() => setActiveTab(tab.key)}
-              type="button"
-            >
-              {tab.label}
-            </button>
-          ))}
+            />
+            {TABS.map((tab, idx) => (
+              <button
+                key={tab.key}
+                ref={(el) => {
+                  tabButtonRefs.current[idx] = el;
+                }}
+                className={`my-journey-tab-btn ${
+                  activeTab === tab.key ? "active" : ""
+                }`}
+                onClick={() => setActiveTab(tab.key)}
+                type="button"
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
         <div
           className={`my-journey-tab-container tab-content fade-in ${
