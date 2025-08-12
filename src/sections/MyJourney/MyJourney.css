@@ -487,7 +487,7 @@
   position: relative;
   margin: 0px 8px;
   padding: 16px 0px;
-  border-radius: 24px;
+  border-radius: 100px;
   display: flex;
 }
 
@@ -616,7 +616,7 @@
     position: relative;
     margin: 0px 8px;
     padding: 16px 0px;
-    border-radius: 24px;
+    border-radius: 100px;
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -730,7 +730,7 @@
     position: relative;
     margin: 0px 8px;
     padding: 16px 0px;
-    border-radius: 24px;
+    border-radius: 100px;
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
