@@ -3,14 +3,16 @@ import IconShowLess from "../../assets/icons/ic_show_less.svg?react";
 import IconShowMore from "../../assets/icons/ic_show_more.svg?react";
 
 import { experiences } from "./Experience/ExperienceData";
+import { volunteers } from "./Volunteer/VolunteerData";
+import { educations } from "./Education/EducationData";
+import { certifications } from "./Certification/CertificationData";
 
 import "./MyJourney.css";
 import ExperienceItem from "./Experience/ExperienceItem";
 import EducationItem from "./Education/EducationItem";
-import { educations } from "./Education/EducationData";
 import CertificationItem from "./Certification/CertificationItem";
-import { certifications } from "./Certification/CertificationData";
 import CertificationPagination from "./Certification/CertificationPagination";
+import VolunteerItem from "./Volunteer/VolunteerItem";
 
 const TABS = [
   { label: "Experiences", key: "experiences" },
@@ -214,7 +216,47 @@ const MyJourneySection = () => {
               />
             </div>
           )}
-          {activeTab === "volunteer" && <p>Volunteer</p>}
+          {activeTab === "volunteer" &&
+            (isMobile ? (
+              <div className="my-journey-volunteer-list">
+                {volunteers.map((exp, index) => (
+                  <VolunteerItem
+                    key={index}
+                    exp={exp}
+                    side="left"
+                    index={index}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="my-journey-volunteer-grid">
+                <div className="my-journey-volunteer-left-column">
+                  {volunteers
+                    .filter((exp) => exp.side === "left")
+                    .map((exp, index) => (
+                      <VolunteerItem
+                        key={index}
+                        exp={exp}
+                        side="left"
+                        index={index}
+                      />
+                    ))}
+                </div>
+
+                <div className="my-journey-volunteer-right-column">
+                  {volunteers
+                    .filter((exp) => exp.side === "right")
+                    .map((exp, index) => (
+                      <VolunteerItem
+                        key={index}
+                        exp={exp}
+                        side="right"
+                        index={index}
+                      />
+                    ))}
+                </div>
+              </div>
+            ))}
           {activeTab === "honorAndAwards" && <p>Honor and Awards</p>}
         </div>
         {(activeTab === "experiences" || activeTab === "volunteer") &&

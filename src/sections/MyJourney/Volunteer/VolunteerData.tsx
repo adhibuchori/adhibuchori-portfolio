@@ -1,0 +1,206 @@
+import ImageOrganizationUPNVJ from "../../../assets/images/iv_education_UPNVJ.png";
+import ImageOrganizationAndroidUPNVJ from "../../../assets/images/iv_company_android_upnvj.png";
+import ImageOrganizationJujitsuBulungan from "../../../assets/images/iv_company_jujitsu_bulungan.png";
+import ImageOrganizationBEMFIKUPNVJ from "../../../assets/images/iv_organization_bemfik_upnvj.png";
+
+export const volunteers = [
+  {
+    title: "Vice Chairman of SENAMIKA VIII",
+    company: "Universitas Pembangunan Nasional Veteran Jakarta",
+    companyImage: ImageOrganizationUPNVJ,
+    date: "Jul 2023 - Aug 2023 · 2 mos",
+    location: "Education",
+    points: [
+      "Led the event, chaired meetings, and monitored performance, ensuring optimal functioning both internally and externally.",
+      "Cultivated effective communication among the 50 committee members, including 28 student committee members and 22 lecturer committee members.",
+      "Organized a hybrid Proceeding Event of the Faculty of Computer Science at Aula Bhineka Tunggal Ika Universitas Pembangunan Nasional Veteran Jakarta, attended by 210+ participants and 55+ presenters.",
+      "Setting up task management and timelines for well-organized activities using the Trello App.",
+      "Introduce innovations to enhance and make activities more effective by holding the event in a hybrid format for the first time.",
+    ],
+    side: "left",
+  },
+  {
+    title: "Project Officer of Open Recruitment Anggota KSM Android UPNVJ",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Aug 2022 - Nov 2022 · 4 mos",
+    location: "Education",
+    points: [
+      "Lead the recruitment program, attended by 200+ applicants.",
+      "Make sure all of the tasks run properly using the Trello app.",
+      "Create innovative programs and concepts to improve the recruitment program.",
+      "Solve various problems that arise in recruitment programs and events.",
+    ],
+    side: "right",
+  },
+  {
+    title:
+      "Mentor of Lari dari Monumen Nasional sampai Bulugan (LAMONGAN) 2022",
+    company: "Ju-jitsu Bulungan",
+    companyImage: ImageOrganizationJujitsuBulungan,
+    date: "Nov 2022 · 1 mo",
+    location: "Education",
+    points: [
+      "Teach 6 2nd-grade high school students about Ju-jitsu Bulungan extracurriculars using the Trello application to manage the event.",
+      "Provide guidance, development, and supervision of the event with 50+ participants.",
+    ],
+    side: "left",
+  },
+  {
+    title: "Event Staff of Company Visit",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Oct 2022 - Nov 2022 · 2 mos",
+    location: "Education",
+    points: [
+      "Compose event plans and create rundowns.",
+      "Coordinate with the company in carrying out activities.",
+      "Successfully organized a hybrid Company Visit event at PT. Property Management Solutions (Pinhome), attended by 30+ participants including KSM Android functionaries and active members.",
+    ],
+    side: "right",
+  },
+  {
+    title: "Project Officer of Night Gathering",
+    company: "FIK UPNVJ 2020",
+    companyImage: ImageOrganizationUPNVJ,
+    date: "Sep 2022 - Oct 2022 · 2 mos",
+    location: "Social Services",
+    points: [
+      "Lead the event program using the Trello app.",
+      "Built innovative concept by prioritizing its effectiveness to improve the event.",
+      "Make sure the event program runs properly.",
+      "Solve various problems that arise in the events.",
+      "Coordinate and successfully organize a Gathered Event with 70+ participants.",
+    ],
+    side: "left",
+  },
+  {
+    title: "Head of Event Division of Night Gathering",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Jul 2022 - Aug 2022 · 2 mos",
+    location: "Education",
+    points: [
+      "Ensure the smooth execution of the entire task list.",
+      "Address and solve problems during the event.",
+      "Assist the team in their tasks.",
+      "Coordinate and successfully organize a Gathered Event with 60+ participants including alumni, functionaries, and active members.",
+    ],
+    side: "right",
+  },
+  {
+    title: "Kotlin Basic Mentor",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Aug 2022 - Dec 2022 · 5 mos",
+    location: "Education",
+    points: [
+      "Teaching basic Kotlin material to 21 mentees over 10 sessions.",
+      "Creating learning content following the syllabus.",
+      "Assessing the mentees' work and projects.",
+    ],
+    side: "left",
+  },
+  {
+    title:
+      "Digital Image Processing and Artificial Intelligence Courses Study Sharing (STRING) Mentor",
+    company: "Badan Eksekutif Mahasiswa Fakultas Ilmu Komputer UPNVJ",
+    companyImage: ImageOrganizationBEMFIKUPNVJ,
+    date: "Mar 2022 - Jun 2022 · 4 mos",
+    location: "Education",
+    points: [
+      "Teaching basic Digital Image Processing and Artificial Intelligence to second-year Informatics students.",
+      "Creating learning content following the course materials.",
+      "Being a consultant for midterm and final exam preparation (UTS and UAS).",
+    ],
+    side: "right",
+  },
+  {
+    title: "UI/UX Basic Mentor",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Feb 2022 - Jul 2022 · 6 mos",
+    location: "Education",
+    points: [
+      "Teaching UI/UX Design material to 13 mentees over 10 sessions.",
+      "Creating learning content following the syllabus.",
+      "Assessing the mentees' work and projects.",
+    ],
+    side: "left",
+  },
+  {
+    title: "Administration and Registration Staff of SENAMIKA IV",
+    company: "Universitas Pembangunan Nasional Veteran Jakarta",
+    companyImage: ImageOrganizationUPNVJ,
+    date: "Sep 2021 · 1 mo",
+    points: [
+      "Be a Moderator of the event.",
+      "Make a presence form for the participants of the event.",
+      "Manage all administrative work and registration requirements.",
+    ],
+    side: "right",
+  },
+  {
+    title: "Event Staff of Open Recruitment Anggota KSM Android",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Aug 2021 - Nov 2021 · 4 mos",
+    location: "Education",
+    points: [
+      "I conducted interviews, created participant assessment sheets, and served as the Master of Ceremony for the welcoming party.",
+    ],
+    side: "left",
+  },
+  {
+    title: "Event Staff of Workshop Android and Web",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "May 2021 - Jun 2021 · 2 mos",
+    location: "Education",
+    points: [
+      "Created a rundown and terms of reference for the workshop, coordinated with participants and speakers, and developed rules, a Master of Ceremony script, and a moderator script.",
+    ],
+    side: "right",
+  },
+  {
+    title: "Event Staff of Workshop UI/UX and Android Development",
+    company: "KSM Android UPNVJ",
+    companyImage: ImageOrganizationAndroidUPNVJ,
+    date: "Feb 2021 - Mar 2021 · 2 mos",
+    location: "Education",
+    points: [
+      "Created a rundown and terms of reference for the workshop, coordinated with participants and speakers, and developed rules, a Master of Ceremony script, and a moderator script.",
+    ],
+    side: "left",
+  },
+  {
+    title: "Event Staff of Outbond 2019",
+    company: "Ju-jitsu Bulungan",
+    companyImage: ImageOrganizationJujitsuBulungan,
+    date: "Nov 2018 - Jan 2019 · 3 mos",
+    location: "Education",
+    points: [
+      "Built the concept of the event by prioritizing its effectiveness of the event.",
+      "Organize the game sessions.",
+      "Create a rundown with many different scenarios.",
+      "Solve various problems that arise in various events divisions.",
+      "Cultivated effective communication and organized a Leadership Event, attended by 50+ participants including the school board, alumni, and current students.",
+    ],
+    side: "right",
+  },
+  {
+    title:
+      "Event Staff of Lari dari Monumen Nasional sampai Bulungan (LAMONGAN) 2018",
+    company: "Ju-jitsu Bulungan",
+    companyImage: ImageOrganizationJujitsuBulungan,
+    date: "Oct 2018 · 1 mo",
+    location: "Education",
+    points: [
+      "Built the concept of the event by prioritizing its effectiveness of the event.",
+      "Create a rundown of the event.",
+      "Solve various problems that arise in various events division.",
+      "Cultivated effective communication and organized a Leadership Event, attended by 50+ participants including the school board, alumni, and current students.",
+    ],
+    side: "left",
+  },
+];
