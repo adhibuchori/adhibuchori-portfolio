@@ -95,7 +95,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar glass-effect`}>
+      <nav className={`navbar glass-effect backdrop-filter`}>
         <div className="navbar-container">
           <h1 className="navbar-title">adhibuchori’s Portfolio</h1>
 

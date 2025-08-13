@@ -904,6 +904,9 @@
   .my-journey-volunteer-item.right::before {
     background: var(--color-primary-300);
   }
+  .my-journey-certification-title:hover::before {
+    background-color: var(--color-info);
+  }
   .my-journey-show-btn {
     border: 2px solid var(--color-primary-100);
   }
