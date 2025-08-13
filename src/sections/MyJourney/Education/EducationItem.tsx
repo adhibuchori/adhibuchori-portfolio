@@ -23,7 +23,7 @@ const EducationItem = ({ edu }: { edu: EducationType }) => {
         </div>
       </div>
       {edu.details && (
-        <ol className="my-journey-experience-points">
+        <ol className="my-journey-education-points">
           {edu.details.map((point, idx) => (
             <li key={idx}>{point}</li>
           ))}

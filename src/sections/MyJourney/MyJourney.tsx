@@ -3,9 +3,10 @@ import IconShowLess from "../../assets/icons/ic_show_less.svg?react";
 import IconShowMore from "../../assets/icons/ic_show_more.svg?react";
 
 import { experiences } from "./Experience/ExperienceData";
-import { volunteers } from "./Volunteer/VolunteerData";
 import { educations } from "./Education/EducationData";
 import { certifications } from "./Certification/CertificationData";
+import { volunteers } from "./Volunteer/VolunteerData";
+import { honorsAndAwards } from "./HonorsAndAwards/HonorsAndAwardsData";
 
 import "./MyJourney.css";
 import ExperienceItem from "./Experience/ExperienceItem";
@@ -13,13 +14,14 @@ import EducationItem from "./Education/EducationItem";
 import CertificationItem from "./Certification/CertificationItem";
 import CertificationPagination from "./Certification/CertificationPagination";
 import VolunteerItem from "./Volunteer/VolunteerItem";
+import HonorsAndAwardsItem from "./HonorsAndAwards/HonorsAndAwardsItem";
 
 const TABS = [
   { label: "Experiences", key: "experiences" },
   { label: "Education", key: "education" },
   { label: "Certifications", key: "certifications" },
   { label: "Volunteer", key: "volunteer" },
-  { label: "Honors & Awards", key: "honorAndAwards" },
+  { label: "Honors & Awards", key: "honorsAndAwards" },
 ];
 
 const MyJourneySection = () => {
@@ -145,7 +147,9 @@ const MyJourneySection = () => {
         </div>
         <div
           className={`my-journey-tab-container tab-content fade-in ${
-            activeTab === "education" || activeTab === "certifications"
+            activeTab === "education" ||
+            activeTab === "certifications" ||
+            activeTab === "honorsAndAwards"
               ? "hide-before"
               : ""
           }`}
@@ -257,8 +261,15 @@ const MyJourneySection = () => {
                 </div>
               </div>
             ))}
-          {activeTab === "honorAndAwards" && <p>Honor and Awards</p>}
+          {activeTab === "honorsAndAwards" && (
+            <div className="my-journey-honors-and-awards-container">
+              {honorsAndAwards.map((award, index) => (
+                <HonorsAndAwardsItem key={index} award={award} />
+              ))}
+            </div>
+          )}
         </div>
+
         {(activeTab === "experiences" || activeTab === "volunteer") &&
           !showMore && <div className="my-journey-gradient-fade" />}
 
