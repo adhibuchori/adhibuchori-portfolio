@@ -1,14 +1,26 @@
+import React, { Suspense } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import HomeSection from "./sections/Home/Home";
-import AboutMeSection from "./sections/AboutMe/AboutMe";
-import MyJourneySection from "./sections/MyJourney/MyJourney";
-import TechStackSection from "./sections/TechStack/TechStack";
-import ProjectsSection from "./sections/Projects/Projects";
-import TestimonialsSection from "./sections/Testimonials/Testimonials";
-import ContactMeSection from "./sections/ContactMe/ContactMe";
 import "./styles/App.css";
 import Footer from "./components/Footer/Footer";
 import FloatingBottomNav from "./components/FloatingBottomNav/FloatingBottomNav";
+
+const AboutMeSection = React.lazy(() => import("./sections/AboutMe/AboutMe"));
+const MyJourneySection = React.lazy(
+  () => import("./sections/MyJourney/MyJourney")
+);
+const TechStackSection = React.lazy(
+  () => import("./sections/TechStack/TechStack")
+);
+const ProjectsSection = React.lazy(
+  () => import("./sections/Projects/Projects")
+);
+const TestimonialsSection = React.lazy(
+  () => import("./sections/Testimonials/Testimonials")
+);
+const ContactMeSection = React.lazy(
+  () => import("./sections/ContactMe/ContactMe")
+);
 
 function App() {
   return (
@@ -16,12 +28,14 @@ function App() {
       <Navbar />
       <main>
         <HomeSection />
-        <AboutMeSection />
-        <MyJourneySection />
-        <TechStackSection />
-        <ProjectsSection />
-        <TestimonialsSection />
-        <ContactMeSection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <AboutMeSection />
+          <MyJourneySection />
+          <TechStackSection />
+          <ProjectsSection />
+          <TestimonialsSection />
+          <ContactMeSection />
+        </Suspense>
       </main>
       <Footer />
       <FloatingBottomNav />

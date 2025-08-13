@@ -51,6 +51,11 @@
   --color-primary-800: #0f1312;
   --color-primary-900: #0b0e0e;
 
+  --color-info: #4a6272;
+  --color-error: #a84e4e;
+  --color-warning: #b68b3e;
+  --color-success: #577d55;
+
   --color-background: #1a1f1d;
 }
 

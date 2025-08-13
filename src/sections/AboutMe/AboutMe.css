@@ -102,11 +102,15 @@
     var(--color-primary-900) 100%
   );
   border: 3px solid var(--color-primary-300);
-  border-radius: 100%;
+  border-radius: 100px;
   animation: bounce-pin 1s ease-in-out infinite;
   box-shadow: 0 0 0 0 rgba(129, 154, 145, 0.6);
   animation: pulse-pin 2s infinite;
   position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes pulse-pin {
