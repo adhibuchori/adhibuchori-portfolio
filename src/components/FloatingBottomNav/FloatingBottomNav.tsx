@@ -15,7 +15,7 @@ const socialIcons = [
 const FloatingBottomNav = () => {
   return (
     <div className="bottom-nav-wrapper">
-      <div className="floating-bottom-nav glass-effect">
+      <div className="floating-bottom-nav glass-effect backdrop-filter">
         {socialIcons.map((item, index) => (
           <a
             key={index}
