@@ -1,70 +1,40 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import "./TechStack.css";
+import BaseTabs from "../../components/BaseTabs/BaseTabs";
 
 const TABS = [
-  { label: "Mobile Development", key: "mobile_development" },
-  { label: "Web Development", key: "web_development" },
+  { label: "Multi-Platform App", key: "multi_platform_app" },
+  { label: "Android", key: "android" },
+  { label: "Front-End Web", key: "frontend_web" },
   { label: "Machine Learning", key: "machine_learning" },
-  { label: "UI/UX Design", key: "ui_ux_design" },
+  { label: "UI/UX Design", key: "ui_ux" },
+  { label: "Back-End", key: "backend" },
 ];
 
 const TechStackSection = () => {
-  const [activeTab, setActiveTab] = useState("mobile_development");
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const [activeTab, setActiveTab] = useState("multi_platform_app");
 
-  useEffect(() => {
-    const updateIndicator = () => {
-      const activeIndex = TABS.findIndex((tab) => tab.key === activeTab);
-      const activeBtn = tabRefs.current[activeIndex];
-      if (activeBtn) {
-        setIndicatorStyle({
-          left: activeBtn.offsetLeft,
-          width: activeBtn.offsetWidth,
-        });
-      }
-    };
-
-    updateIndicator();
-    window.addEventListener("resize", updateIndicator);
-
-    return () => window.removeEventListener("resize", updateIndicator);
-  }, [activeTab]);
+  const tabContainerRef = useRef<HTMLDivElement | null>(null);
+  const tabWrapperRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <section id="tech-stack">
       <div className="tech-stack-container">
         <p className="tech-stack-title-text">Tech Stack</p>
-        <div
-          className="tech-stack-tabs glass-effect"
-          style={{ position: "relative" }}
-        >
-          <div
-            className="tech-stack-tab-indicator-pill"
-            style={{
-              left: indicatorStyle.left,
-              width: indicatorStyle.width,
-            }}
-          />
-          {TABS.map((tab, idx) => (
-            <button
-              key={tab.key}
-              ref={(el) => {
-                tabRefs.current[idx] = el;
-              }}
-              className={`tech-stack-tab-btn ${
-                activeTab === tab.key ? "active" : ""
-              }`}
-              onClick={() => setActiveTab(tab.key)}
-              type="button"
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+        <BaseTabs
+          tabs={TABS}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          tabContainerRef={tabContainerRef}
+          tabWrapperRef={tabWrapperRef}
+        />
         <div className="tab-content fade-in">
-          {/* TODO: Input Tech Stack */}
-          <p>Coming Soon</p>
+          {activeTab === "multi_platform_app" && <p>Multi-Platform App</p>}
+          {activeTab === "android" && <p>Android</p>}
+          {activeTab === "frontend_web" && <p>Front-End Web</p>}
+          {activeTab === "machine_learning" && <p>Machine Learning</p>}
+          {activeTab === "ui_ux" && <p>UI/UX Design</p>}
+          {activeTab === "backend" && <p>Back-End</p>}
         </div>
       </div>
     </section>

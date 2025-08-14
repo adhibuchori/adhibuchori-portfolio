@@ -46,7 +46,7 @@ const AboutMeSection = () => {
               <b>Tangerang</b>, Indonesia
             </p>
             <div className="about-me-location-pin">
-              <IconCat className="about-me-location-icon"/>
+              <IconCat className="about-me-location-icon" />
             </div>
           </div>
         </div>

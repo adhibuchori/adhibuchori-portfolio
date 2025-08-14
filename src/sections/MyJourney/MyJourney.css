@@ -38,29 +38,6 @@
   padding-left: 48px;
 }
 
-.my-journey-tab-container {
-  position: relative;
-  width: 100%;
-}
-
-.my-journey-tab-container::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 98%;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 24px;
-  z-index: 1;
-}
-
-.my-journey-tab-container.hide-before::before {
-  display: none;
-}
-
 .my-journey-experience-item,
 .my-journey-volunteer-item {
   margin-bottom: 48px;
@@ -515,78 +492,6 @@
   pointer-events: none;
 }
 
-.my-journey-tabs {
-  display: flex;
-  gap: 24px;
-  border-radius: 40px;
-  padding: 0px 0px;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
-  justify-content: center;
-  position: relative;
-}
-
-.my-journey-tab-btn-wrapper {
-  position: relative;
-  margin: 0px 8px;
-  padding: 16px 0px;
-  border-radius: 100px;
-  display: flex;
-}
-
-.my-journey-tab-btn {
-  position: relative;
-  background: transparent;
-  color: #4b4b4b;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 12px 32px;
-  border-radius: 24px;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-  z-index: 1;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-.my-journey-tab-btn.active {
-  background: transparent;
-  color: white;
-  z-index: 2;
-  box-shadow: none;
-}
-
-.my-journey-tab-indicator-pill {
-  position: absolute;
-  height: 80%;
-  top: 10%;
-  border-radius: 40px;
-  background: var(--color-primary-500);
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 0;
-}
-
-.tab-content {
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 1;
-}
-
-.tab-content.fade-in {
-  animation: fadeInTab 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes fadeInTab {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .my-journey-show-more-btn-container {
   text-align: center;
   width: 100%;
@@ -649,32 +554,6 @@
   .my-journey-title-text {
     font-size: 20px;
   }
-  .my-journey-tabs {
-    width: 100%;
-    gap: 0px;
-    padding: 0px;
-    margin: 0px;
-  }
-  .my-journey-tab-btn-wrapper {
-    position: relative;
-    margin: 0px 8px;
-    padding: 16px 0px;
-    border-radius: 100px;
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .my-journey-tab-btn-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .my-journey-tab-btn {
-    display: inline-block;
-    font-size: 12px;
-    padding: 6px 16px;
-    flex: 1 2 auto;
-    white-space: nowrap;
-  }
   .my-journey-experience-grid,
   .my-journey-volunteer-grid {
     display: flex;
@@ -693,14 +572,6 @@
   .my-journey-experience-item,
   .my-journey-volunteer-item {
     margin-bottom: 32px;
-  }
-  .my-journey-tab-container::before {
-    left: 0;
-    transform: none;
-    height: 99.55%;
-  }
-  .my-journey-tab-container.hide-before::before {
-    display: none;
   }
   .my-journey-experience-item.left::before,
   .my-journey-experience-item.right::before,
@@ -790,31 +661,6 @@
   .my-journey-title-text {
     font-size: 20px;
   }
-  .my-journey-tabs {
-    gap: 0px;
-    padding: 0px;
-    margin: 0px;
-  }
-  .my-journey-tab-btn-wrapper {
-    position: relative;
-    margin: 0px 8px;
-    padding: 16px 0px;
-    border-radius: 100px;
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .my-journey-tab-btn-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .my-journey-tab-btn {
-    display: inline-block;
-    font-size: 14px;
-    padding: 6px 16px;
-    flex: 1 2 auto;
-    white-space: nowrap;
-  }
   .my-journey-experience-grid,
   .my-journey-volunteer-grid {
     display: flex;
@@ -833,14 +679,6 @@
   .my-journey-experience-item,
   .my-journey-volunteer-item {
     margin-bottom: 32px;
-  }
-  .my-journey-tab-container::before {
-    left: 0;
-    transform: none;
-    height: 99.6%;
-  }
-  .my-journey-tab-container.hide-before::before {
-    display: none;
   }
   .my-journey-experience-item.left::before,
   .my-journey-experience-item.right::before,
@@ -938,20 +776,23 @@
   .my-journey-certification-skill-chip {
     color: gainsboro;
   }
-  .my-journey-tab-indicator-pill,
   .my-journey-show-btn,
   .my-journey-experience-item.left::before,
   .my-journey-experience-item.right::before,
   .my-journey-certification-pagination-btn,
   .my-journey-volunteer-item.left::before,
   .my-journey-volunteer-item.right::before {
-    background: var(--color-primary-300);
+    background: var(--color-primary-400);
+  }
+  .my-journey-experience-item.left::before,
+  .my-journey-experience-item.right::before,
+  .my-journey-certification-pagination-btn,
+  .my-journey-volunteer-item.left::before,
+  .my-journey-volunteer-item.right::before {
+    border: 2px solid rgba(160, 176, 168, 0.1);
   }
   .my-journey-certification-title:hover::before {
     background-color: var(--color-info);
-  }
-  .my-journey-show-btn {
-    border: 2px solid var(--color-primary-100);
   }
   .my-journey-certification-pagination-btn.is-disabled {
     background: rgba(255, 255, 255, 0.2);

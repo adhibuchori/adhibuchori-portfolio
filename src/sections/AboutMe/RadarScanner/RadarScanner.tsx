@@ -11,7 +11,7 @@ import IconReact from "../../../assets/icons/ic_react.svg?react";
 
 const RadarScanner = () => {
   return (
-    <div className="panel">
+    <div className="panel glass-effect backdrop-filter">
       <div className="scanner"></div>
       <ul className="something">
         <li>

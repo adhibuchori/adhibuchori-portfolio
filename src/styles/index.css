@@ -56,7 +56,13 @@
   --color-warning: #b68b3e;
   --color-success: #577d55;
 
-  --color-background: #1a1f1d;
+  --color-background: #0b0e0e;
+
+  .glass-effect {
+    background: rgba(26, 31, 29, 0.2);
+    border: 2px solid rgba(160, 176, 168, 0.1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .glass-effect {
@@ -66,6 +72,6 @@
 }
 
 .backdrop-filter {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }

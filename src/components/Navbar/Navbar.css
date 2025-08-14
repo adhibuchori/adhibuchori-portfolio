@@ -269,21 +269,18 @@ section[id] {
   .sidebar-header,
   .close-button,
   .navbar-toggle,
-  .navbar-icon {
+  .navbar-icon,
+  .sidebar-item {
     color: white;
   }
-  .navbar-item.active {
-    background-color: var(--color-primary-300);
-  }
+  .navbar-item.active,
   .toggle-knob {
-    background-color: var(--color-primary-200);
+    background-color: var(--color-primary-400);
   }
-}
-
-[data-theme="dark"] .mobile-sidebar {
-  background-color: #1e1e1e;
-}
-
-[data-theme="dark"] .sidebar-item {
-  color: white;
+  .theme-toggle input:checked + .toggle-slider {
+    background-color: var(--color-primary-500);
+  }
+  .mobile-sidebar {
+    background-color: #1e1e1e;
+  }
 }

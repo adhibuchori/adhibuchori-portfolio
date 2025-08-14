@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { bubbles } from "../Bubbles/bubbles";
 
 export function useHomeBubbleCursor() {
-  const cursorRef = useRef<HTMLImageElement | null>(null);
+  const cursorRef = useRef<SVGSVGElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

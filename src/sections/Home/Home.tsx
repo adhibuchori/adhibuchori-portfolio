@@ -1,6 +1,5 @@
 import ImageProfile from "../../assets/images/iv_profile_picture.jpeg";
-// TODO: Migration Image Icon to Component Icon
-import IconCursor from "../../assets/icons/ic_cursor.svg";
+import IconCursor from "../../assets/icons/ic_cursor.svg?react";
 import IconDownload from "../../assets/icons/ic_download.svg?react";
 import IconMail from "../../assets/icons/ic_mail.svg?react";
 
@@ -24,12 +23,7 @@ const HomeSection = () => {
               src={ImageProfile}
               alt="Home Profile"
             />
-            <img
-              className="moving-cursor"
-              src={IconCursor}
-              ref={cursorRef}
-              alt="Icon Cursor"
-            />
+            <IconCursor ref={cursorRef} className="moving-cursor"/>
             {bubbles.map((bubble, index) => (
               <BubbleCursor
                 key={index}

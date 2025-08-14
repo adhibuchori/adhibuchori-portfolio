@@ -1,0 +1,178 @@
+.base-tabs {
+  display: flex;
+  gap: 24px;
+  border-radius: 40px;
+  padding: 0px 0px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  justify-content: center;
+  position: relative;
+}
+
+.base-tab-btn-wrapper {
+  position: relative;
+  margin: 0px 8px;
+  padding: 16px 0px;
+  border-radius: 100px;
+  display: flex;
+}
+
+.base-tab-btn {
+  position: relative;
+  background: transparent;
+  color: #4b4b4b;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.base-tab-btn.active {
+  background: transparent;
+  color: white;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.base-tab-indicator-pill {
+  position: absolute;
+  height: 80%;
+  top: 10%;
+  border-radius: 40px;
+  background: var(--color-primary-500);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.base-tab-container {
+  position: relative;
+  width: 100%;
+}
+
+.base-tab-container::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 98%;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.base-tab-container.hide-before::before {
+  display: none;
+}
+
+.tab-content {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+.tab-content.fade-in {
+  animation: fadeInTab 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+  .base-tabs {
+    width: 100%;
+    gap: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .base-tab-btn-wrapper {
+    position: relative;
+    margin: 0px 8px;
+    padding: 16px 0px;
+    border-radius: 100px;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .base-tab-btn-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .base-tab-btn {
+    display: inline-block;
+    font-size: 12px;
+    padding: 6px 16px;
+    flex: 1 2 auto;
+    white-space: nowrap;
+  }
+  .base-tab-container::before {
+    left: 0;
+    transform: none;
+    height: 99.55%;
+  }
+  .base-tab-container.hide-before::before {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 550px) and (max-width: 1400px) {
+  .base-tabs {
+    gap: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .base-tab-btn-wrapper {
+    position: relative;
+    margin: 0px 8px;
+    padding: 16px 0px;
+    border-radius: 100px;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .base-tab-btn-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .base-tab-btn {
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 16px;
+    flex: 1 2 auto;
+    white-space: nowrap;
+  }
+  .base-tab-container::before {
+    left: 0;
+    transform: none;
+    height: 99.6%;
+  }
+  .base-tab-container.hide-before::before {
+    display: none;
+  }
+}
+
+[data-theme="dark"] {
+  .base-tab-indicator-pill {
+    background: var(--color-primary-400);
+  }
+  .base-tab-container::before {
+    background-color: rgba(160, 176, 168, 0.1);
+  }
+}

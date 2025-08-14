@@ -83,7 +83,10 @@
   justify-content: center;
   border-radius: 24px;
   overflow: hidden;
-  background-image: url("../../assets/images/iv_my_location.png");
+  background-image: url("../../assets/images/iv_my_location_light.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .about-me-location-label {
@@ -222,7 +225,6 @@
 
 .about-me-button-wrapper:hover {
   background-color: var(--color-primary-600);
-  border: 2px solid var(--color-primary-400);
   cursor: pointer;
   transform: scale(1.025);
 }
@@ -384,7 +386,7 @@
   }
   .about-me-button-wrapper,
   .about-me-location-label {
-    background-color: var(--color-primary-300);
+    background-color: var(--color-primary-400);
   }
   .about-me-button-wrapper:hover {
     border: 2px solid var(--color-primary-100);
@@ -392,9 +394,14 @@
   .about-me-location-pin {
     background: linear-gradient(
       to right,
-      var(--color-primary-200) 25%,
+      var(--color-primary-300) 50%,
       var(--color-primary-400) 100%
     );
-    border: 2px solid var(--color-primary-100);
+  }
+  .about-me-location-wrapper {
+    background-image: url("../../assets/images/iv_my_location_dark.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
