@@ -52,14 +52,14 @@ const AboutMeSection = () => {
         </div>
         <div className="about-me-value-wrapper">
           <p className="about-me-value-desc-text glass-effect">
-            Turn your imagination into digital reality.
+            Turn your imagination into digital reality
           </p>
           <p className="about-me-value-desc-text glass-effect">
             Empowering digital solutions through collaboration, adaptability,
-            teamwork and continuous growth.
+            teamwork, and continuous growth
           </p>
           <p className="about-me-value-desc-text glass-effect">
-            Crafting high-performance and high-quality software.
+            Crafting high-performance and high-quality software
           </p>
         </div>
         <div className="about-me-interest-wrapper">
