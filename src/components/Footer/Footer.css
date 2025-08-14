@@ -5,3 +5,9 @@
   color: #1a1f1d;
   background-color: var(--color-background);
 }
+
+[data-theme="dark"] {
+  .footer {
+    color: gainsboro;
+  }
+}
