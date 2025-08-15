@@ -1,11 +1,11 @@
 import type { VolunteerType } from "./VolunteerType";
 
 const VolunteerItem = ({
-  exp,
+  volunteer,
   side,
   index,
 }: {
-  exp: VolunteerType;
+  volunteer: VolunteerType;
   side: "left" | "right";
   index: number;
 }) => (
@@ -17,20 +17,20 @@ const VolunteerItem = ({
     <div className="my-journey-volunteer-content glass-effect">
       <div className="my-journey-volunteer-header-container">
         <img
-          src={exp.companyImage}
-          alt={`${exp.company} logo`}
+          src={volunteer.companyImage}
+          alt={`${volunteer.company} logo`}
           className="my-journey-volunteer-image"
         />
         <div>
-          <p className="my-journey-volunteer-title">{exp.title}</p>
-          <p className="my-journey-volunteer-company">{exp.company}</p>
-          <p className="my-journey-volunteer-duration">{exp.duration}</p>
-          <p className="my-journey-volunteer-date">{exp.date}</p>
-          <p className="my-journey-volunteer-location">{exp.location}</p>
+          <p className="my-journey-volunteer-title">{volunteer.title}</p>
+          <p className="my-journey-volunteer-company">{volunteer.company}</p>
+          <p className="my-journey-volunteer-duration">{volunteer.duration}</p>
+          <p className="my-journey-volunteer-date">{volunteer.date}</p>
+          <p className="my-journey-volunteer-location">{volunteer.location}</p>
         </div>
       </div>
       <ol className="my-journey-volunteer-points">
-        {exp.points.map((point, i) => (
+        {volunteer.points.map((point, i) => (
           <li key={i}>{point}</li>
         ))}
       </ol>
