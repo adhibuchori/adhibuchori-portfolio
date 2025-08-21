@@ -1,9 +1,13 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import HomeSection from "./sections/Home/Home";
 import "./styles/App.css";
 import Footer from "./components/Footer/Footer";
 import FloatingBottomNav from "./components/FloatingBottomNav/FloatingBottomNav";
+
+interface ContactMeProps {
+  onVisibilityChange: (isVisible: boolean) => void;
+}
 
 const AboutMeSection = React.lazy(() => import("./sections/AboutMe/AboutMe"));
 const MyJourneySection = React.lazy(
@@ -20,9 +24,12 @@ const TestimonialsSection = React.lazy(
 );
 const ContactMeSection = React.lazy(
   () => import("./sections/ContactMe/ContactMe")
-);
+) as React.LazyExoticComponent<React.ComponentType<ContactMeProps>>;
 
 function App() {
+  const [isContactSectionInView, setIsContactSectionInView] =
+    useState<boolean>(false);
+
   return (
     <>
       <Navbar />
@@ -34,11 +41,11 @@ function App() {
           <TechStackSection />
           <ProjectsSection />
           <TestimonialsSection />
-          <ContactMeSection />
+          <ContactMeSection onVisibilityChange={setIsContactSectionInView} />
         </Suspense>
       </main>
       <Footer />
-      <FloatingBottomNav />
+      {!isContactSectionInView && <FloatingBottomNav />}
     </>
   );
 }
