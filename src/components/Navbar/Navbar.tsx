@@ -31,28 +31,39 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
-      let maxVisibleHeight = 0;
+      const middle = window.innerHeight / 2;
       let currentSection = "home";
 
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        const visibleHeight =
-          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-
-        if (visibleHeight > maxVisibleHeight && visibleHeight > 100) {
-          maxVisibleHeight = visibleHeight;
+        if (rect.top <= middle && rect.bottom >= middle) {
           const id = section.getAttribute("id");
           if (id) currentSection = id;
         }
       });
 
+      const doc = document.documentElement;
+      const hasScrollableContent = doc.scrollHeight > doc.clientHeight + 2;
+      const hasUserScrolled = doc.scrollTop > 0;
+      const isAtBottom =
+        hasScrollableContent &&
+        doc.scrollTop + doc.clientHeight >= doc.scrollHeight - 2;
+
+      if (isAtBottom && hasUserScrolled) {
+        currentSection = "contact-me";
+      }
+
       setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
