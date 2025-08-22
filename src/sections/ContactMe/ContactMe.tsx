@@ -61,7 +61,7 @@ const ContactMeSection: React.FC<ContactMeSectionProps> = ({
               rel="noopener noreferrer"
               className="contact-me-btn-outline glass-effect"
             >
-              <IconLinkedin /> LinkedIn
+              <IconLinkedin className="contact-me-btn-online-icon" /> LinkedIn
             </a>
             <a
               href="https://github.com/username"
@@ -69,7 +69,7 @@ const ContactMeSection: React.FC<ContactMeSectionProps> = ({
               rel="noopener noreferrer"
               className="contact-me-btn-outline glass-effect"
             >
-              <IconGithub /> GitHub
+              <IconGithub className="contact-me-btn-online-icon" /> GitHub
             </a>
             <a
               href="https://github.com/username"
@@ -77,7 +77,7 @@ const ContactMeSection: React.FC<ContactMeSectionProps> = ({
               rel="noopener noreferrer"
               className="contact-me-btn-outline glass-effect"
             >
-              <IconYoutube /> YouTube
+              <IconYoutube className="contact-me-btn-online-icon" /> YouTube
             </a>
             <a
               href="https://github.com/username"
@@ -85,7 +85,7 @@ const ContactMeSection: React.FC<ContactMeSectionProps> = ({
               rel="noopener noreferrer"
               className="contact-me-btn-outline glass-effect"
             >
-              <IconTiktok /> TikTok
+              <IconTiktok className="contact-me-btn-online-icon" /> TikTok
             </a>
           </div>
         </div>

@@ -118,9 +118,15 @@
     overflow-x: auto;
     justify-content: flex-start;
     border-radius: 8px;
+    font-size: 14px;
   }
   .contact-me-buttons::-webkit-scrollbar {
     display: none;
+  }
+  .contact-me-btn-primary-icon,
+  .contact-me-btn-online-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -146,9 +152,15 @@
     overflow-x: auto;
     border-radius: 8px;
     justify-content: flex-start;
+    font-size: 14px;
   }
   .contact-me-buttons::-webkit-scrollbar {
     display: none;
+  }
+  .contact-me-btn-primary-icon,
+  .contact-me-btn-online-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 
