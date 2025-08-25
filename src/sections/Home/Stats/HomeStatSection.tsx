@@ -32,10 +32,12 @@ const stats = [
 ];
 
 const HomeStatsSection = () => {
+  const loopedStats = [...stats, ...stats];
+
   return (
     <div className="home-stats-slider">
       <div className="home-stats-track">
-        {[...stats, ...stats].map((stat, index) => (
+        {loopedStats.map((stat, index) => (
           <HomeStatCard
             key={index}
             icon={stat.icon}
