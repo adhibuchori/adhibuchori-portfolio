@@ -63,7 +63,14 @@ const MyJourneySection = () => {
   return (
     <section id="my-journey" ref={sectionRef}>
       <div className="my-journey-container">
-        <p className="my-journey-title-text">My Journey</p>
+        <div className="my-journey-header-container">
+          <div className="my-journey-subtitle-text">The Path I’ve Walked</div>
+          <p className="my-journey-title-text">My Journey</p>
+          <p className="my-journey-desc-text">
+            From learning the basics to building impactful projects — here’s the
+            story of my growth and experiences
+          </p>
+        </div>
         <BaseTabs
           tabs={TABS}
           activeTab={activeTab}

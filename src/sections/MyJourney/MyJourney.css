@@ -1,5 +1,5 @@
 #my-journey {
-  padding: 0px 72px 24px 72px;
+  padding: 12px 72px 24px 72px;
 }
 
 .my-journey-container {
@@ -9,9 +9,29 @@
   gap: 32px;
 }
 
+.my-journey-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.my-journey-subtitle-text {
+  color: var(--color-primary-600);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
 .my-journey-title-text {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.my-journey-desc-text {
+  color: rgb(110, 110, 110);
+  font-size: 16px;
 }
 
 .my-journey-experience-grid,
@@ -551,8 +571,13 @@
   .my-journey-container {
     gap: 24px;
   }
+  .my-journey-header-container {
+    padding: 0px 24px;
+    gap: 8px;
+  }
   .my-journey-title-text {
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 0px;
   }
   .my-journey-experience-grid,
   .my-journey-volunteer-grid {
@@ -592,11 +617,17 @@
   .my-journey-honors-and-awards-title {
     font-size: 16px;
   }
+  .my-journey-desc-text {
+    text-align: center;
+    line-height: 1.6;
+  }
   .my-journey-experience-company,
   .my-journey-education-degree,
   .my-journey-volunteer-company {
     font-size: 14px;
   }
+  .my-journey-subtitle-text,
+  .my-journey-desc-text,
   .my-journey-experience-skill-chip,
   .my-journey-certification-skill-chip,
   .my-journey-experience-date,
@@ -658,8 +689,13 @@
   .my-journey-container {
     gap: 24px;
   }
+  .my-journey-header-container {
+    padding: 0px 24px;
+    gap: 8px;
+  }
   .my-journey-title-text {
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 0px;
   }
   .my-journey-experience-grid,
   .my-journey-volunteer-grid {
@@ -698,11 +734,17 @@
   .my-journey-honors-and-awards-title {
     font-size: 16px;
   }
+  .my-journey-desc-text {
+    text-align: center;
+    line-height: 1.6;
+  }
   .my-journey-experience-company,
   .my-journey-education-degree,
   .my-journey-volunteer-company {
     font-size: 14px;
   }
+  .my-journey-subtitle-text,
+  .my-journey-desc-text,
   .my-journey-experience-skill-chip,
   .my-journey-certification-skill-chip,
   .my-journey-experience-date,
@@ -767,6 +809,12 @@
   .my-journey-honors-and-awards-points,
   .my-journey-honor-and-awards-points li {
     color: white;
+  }
+  .my-journey-subtitle-text {
+    color: var(--color-primary-100);
+  }
+  .my-journey-desc-text {
+    color: gainsboro;
   }
   .my-journey-experience-skill-chip:hover,
   .my-journey-certification-skill-chip:hover {

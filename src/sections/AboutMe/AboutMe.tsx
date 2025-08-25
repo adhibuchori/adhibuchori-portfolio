@@ -8,7 +8,14 @@ const AboutMeSection = () => {
   return (
     <section id="about-me">
       <div className="about-me-container">
-        <p className="about-me-title-text">About Me</p>
+        <div className="about-me-header-container">
+          <p className="about-me-subtitle-text">Get to Know Me</p>
+          <p className="about-me-title-text">About Me</p>
+          <p className="about-me-desc-text">
+            A glimpse into who I am, my passions, and what drives me in both
+            work and life
+          </p>
+        </div>
         <div className="about-me-content-wrapper">
           <div className="about-me-summary-content-wrapper">
             <div className="about-me-summary-wrapper glass-effect">

@@ -20,7 +20,14 @@ const TechStackSection = () => {
   return (
     <section id="tech-stack">
       <div className="tech-stack-container">
-        <p className="tech-stack-title-text">Tech Stack</p>
+        <div className="tech-stack-header-container">
+          <p className="tech-stack-subtitle-text">Tools That Power My Work</p>
+          <p className="tech-stack-title-text">Tech Stack</p>
+          <p className="tech-stack-desc-text">
+            The technologies, frameworks, and tools I rely on to design,
+            develop, and deliver quality solutions
+          </p>
+        </div>
         <BaseTabs
           tabs={TABS}
           activeTab={activeTab}

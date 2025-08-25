@@ -20,7 +20,14 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <div className="projects-container">
-        <p className="projects-title-text">Projects</p>
+        <div className="projects-header-container">
+          <p className="projects-subtitle-text">Turning Ideas Into Reality</p>
+          <p className="projects-title-text">Projects</p>
+          <p className="projects-desc-text">
+            A showcase of the work I’ve built — from concepts to fully
+            functional applications
+          </p>
+        </div>
         <BaseTabs
           tabs={TABS}
           activeTab={activeTab}
