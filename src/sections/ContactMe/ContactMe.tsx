@@ -44,8 +44,8 @@ const ContactMeSection: React.FC<ContactMeSectionProps> = ({
               Let's create something amazing together
             </h2>
             <p className="contact-me-subtext">
-              Ready to bring your next project to life? Let&apos;s connect and
-              discuss how I can help you achieve your goals.
+              Have a project in mind or just want to connect? I&apos;d love to
+              hear from you.
             </p>
           </div>
           <div className="contact-me-buttons">
