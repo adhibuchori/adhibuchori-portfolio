@@ -34,34 +34,27 @@ const Navbar = () => {
       const middle = window.innerHeight / 2;
       let currentSection = "home";
 
-      sections.forEach((section, idx) => {
+      sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         const id = section.getAttribute("id");
+        if (!id) return;
 
-        if (rect.top <= middle && rect.bottom >= middle && id) {
+        if (
+          id !== "contact-me" &&
+          rect.top <= middle &&
+          rect.bottom >= middle
+        ) {
           currentSection = id;
         }
 
-        if (idx === sections.length - 1 && rect.top < window.innerHeight) {
-          if (id) currentSection = id;
+        if (
+          id === "contact-me" &&
+          rect.top >= 0 &&
+          rect.bottom <= window.innerHeight
+        ) {
+          currentSection = id;
         }
       });
-
-      const scrollTop =
-        window.scrollY ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollHeight = document.documentElement.scrollHeight;
-
-      const hasScrollableContent = scrollHeight > clientHeight + 2;
-      const hasUserScrolled = scrollTop > 0;
-      const isAtBottom =
-        hasScrollableContent && scrollTop + clientHeight >= scrollHeight - 2;
-
-      if (isAtBottom && hasUserScrolled) {
-        currentSection = "contact-me";
-      }
 
       setActiveSection(currentSection);
     };
