@@ -367,9 +367,6 @@
   .home-role-text {
     font-size: 16px;
   }
-  .home-role-desc-text {
-    font-size: 12px;
-  }
   .home-stats-text {
     font-size: 16px;
   }
@@ -383,6 +380,7 @@
   .home-stats-title-text {
     font-size: 14px;
   }
+  .home-role-desc-text,
   .home-stats-desc-text {
     font-size: 12px;
   }
