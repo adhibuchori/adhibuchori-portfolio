@@ -34,10 +34,15 @@ const Navbar = () => {
       const middle = window.innerHeight / 2;
       let currentSection = "home";
 
-      sections.forEach((section) => {
+      sections.forEach((section, idx) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= middle && rect.bottom >= middle) {
-          const id = section.getAttribute("id");
+        const id = section.getAttribute("id");
+
+        if (rect.top <= middle && rect.bottom >= middle && id) {
+          currentSection = id;
+        }
+
+        if (idx === sections.length - 1 && rect.top < window.innerHeight) {
           if (id) currentSection = id;
         }
       });
