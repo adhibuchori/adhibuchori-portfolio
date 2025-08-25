@@ -103,7 +103,7 @@
 
 .testimonial-text {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 2;
   opacity: 0.9;
 }
 
@@ -136,6 +136,13 @@
     width: 100%;
     padding: 48px 24px 24px 24px;
   }
+  .testimonial-name {
+    font-size: 16px;
+  }
+  .testimonial-role,
+  .testimonial-text {
+    font-size: 12px;
+  }
 }
 
 /* Tablet */
@@ -166,6 +173,13 @@
   .testimonials-slider {
     width: 100%;
     padding: 48px 24px;
+  }
+  .testimonial-name {
+    font-size: 16px;
+  }
+  .testimonial-role,
+  .testimonial-text {
+    font-size: 12px;
   }
 }
 
