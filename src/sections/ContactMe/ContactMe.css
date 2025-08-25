@@ -100,7 +100,7 @@
 /* Mobile */
 @media (max-width: 540px) {
   #contact-me {
-    padding: 24px 24px;
+    padding: 0px 24px 24px 24px;
   }
   .contact-me-card {
     width: 100%;

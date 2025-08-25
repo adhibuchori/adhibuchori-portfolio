@@ -107,6 +107,7 @@
   opacity: 0.9;
 }
 
+/* Mobile */
 @media (max-width: 540px) {
   #testimonials {
     padding: 0px 24px 24px 24px;
@@ -133,7 +134,7 @@
   }
   .testimonials-slider {
     width: 100%;
-    padding: 48px 24px;
+    padding: 48px 24px 24px 24px;
   }
 }
 
