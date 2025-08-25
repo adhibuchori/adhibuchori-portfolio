@@ -42,12 +42,17 @@ const Navbar = () => {
         }
       });
 
-      const doc = document.documentElement;
-      const hasScrollableContent = doc.scrollHeight > doc.clientHeight + 2;
-      const hasUserScrolled = doc.scrollTop > 0;
+      const scrollTop =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollHeight = document.documentElement.scrollHeight;
+
+      const hasScrollableContent = scrollHeight > clientHeight + 2;
+      const hasUserScrolled = scrollTop > 0;
       const isAtBottom =
-        hasScrollableContent &&
-        doc.scrollTop + doc.clientHeight >= doc.scrollHeight - 2;
+        hasScrollableContent && scrollTop + clientHeight >= scrollHeight - 2;
 
       if (isAtBottom && hasUserScrolled) {
         currentSection = "contact-me";
