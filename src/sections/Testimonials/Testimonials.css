@@ -158,7 +158,7 @@
   }
   .testimonial-card:hover {
     transform: none;
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.4);
   }
   .testimonial-name {
     font-size: 16px;
