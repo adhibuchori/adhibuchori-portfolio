@@ -8,28 +8,53 @@ const gradientColors = [
 
 export const testimonials = [
   {
-    name: "Ilham Fathoni",
+    name: "Haruto Tanaka",
     role: "Front-End Engineer",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
   },
   {
-    name: "Hendri Heryanto",
+    name: "Aoi Nakamura",
     role: "Software Engineer",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
   },
   {
-    name: "Yasmin Ayu Handayani",
+    name: "Yui Takahashi",
     role: "Landscape Architect",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
   },
   {
-    name: "Eriko Ferdian Winarko",
+    name: "Ren Fujimoto",
     role: "Front-End Engineer",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
   },
   {
-    name: "I Wayan Pande Putra Yudha",
-    role: "Front-End Engineer",
+    name: "Souta Yamamoto",
+    role: "Mobile Developer",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+  },
+  {
+    name: "Itsuki Kobayashi",
+    role: "UI Designer",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+  },
+  {
+    name: "Mei Hayashi",
+    role: "Back-End Engineer",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+  },
+  {
+    name: "Daichi Sato",
+    role: "Product Manager",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+  },
+  {
+    name: "Hinata Shimizu",
+    role: "Data Scientist",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+  },
+  {
+    name: "Kaito Matsumoto",
+    role: "System Analyst",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
   },
 ].map((item, index) => ({

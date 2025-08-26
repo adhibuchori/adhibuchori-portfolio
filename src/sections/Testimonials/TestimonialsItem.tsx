@@ -1,15 +1,19 @@
 import { useRef } from "react";
 import { testimonials } from "./TestimonialsData";
 import { useActiveCard } from "./useActiveCard";
+import { useIsMobile } from "./useIsMobile";
 
 const TestimonialsItem = () => {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const activeIndex = useActiveCard(trackRef);
 
+  const isMobile = useIsMobile();
+  const data = isMobile ? testimonials : [...testimonials, ...testimonials];
+
   return (
     <div className="testimonials-slider">
       <div className="testimonials-track" ref={trackRef}>
-        {testimonials.map((t, i) => (
+        {data.map((t, i) => (
           <div
             key={i}
             className={`testimonial-card glass-effect ${
