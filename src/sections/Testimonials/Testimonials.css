@@ -156,6 +156,10 @@
     transform: scale(1.075);
     border: 2px solid white;
   }
+  .testimonial-card:hover {
+    transform: none;
+    border: none;
+  }
   .testimonial-name {
     font-size: 16px;
   }
