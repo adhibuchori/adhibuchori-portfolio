@@ -132,9 +132,29 @@
     text-align: center;
     line-height: 1.6;
   }
+  .testimonials-track {
+    width: 100%;
+    overflow-x: scroll;
+    animation: none;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    padding: 40px 24px 24px 24px;
+  }
+  .testimonials-track::-webkit-scrollbar {
+    display: none;
+  }
   .testimonials-slider {
     width: 100%;
-    padding: 40px 24px 24px 24px;
+    padding: 0px;
+  }
+  .testimonial-card {
+    scroll-snap-align: center;
+    margin: 0 auto;
+  }
+  .testimonial-card.active {
+    transform: scale(1.075);
+    border: 2px solid white;
   }
   .testimonial-name {
     font-size: 16px;
