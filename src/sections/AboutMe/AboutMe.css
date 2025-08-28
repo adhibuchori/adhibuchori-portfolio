@@ -124,7 +124,7 @@
     var(--color-primary-700) 25%,
     var(--color-primary-900) 100%
   );
-  border: 3px solid var(--color-primary-300);
+  border: 3px solid #b4c2bd;
   border-radius: 100px;
   animation: bounce-pin 1s ease-in-out infinite;
   box-shadow: 0 0 0 0 rgba(129, 154, 145, 0.6);
@@ -445,6 +445,7 @@
       var(--color-primary-300) 50%,
       var(--color-primary-400) 100%
     );
+    border: 3px solid #3e4a45;
   }
   .about-me-location-wrapper {
     background-image: url("../../assets/images/iv_my_location_dark.png");
