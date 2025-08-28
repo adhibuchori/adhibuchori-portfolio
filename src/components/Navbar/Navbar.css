@@ -118,15 +118,23 @@ section[id] {
   position: fixed;
   top: 0;
   left: -100%;
+  z-index: 1001;
   width: 75%;
   height: 100vh;
-  background-color: white;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   padding: 24px;
-  z-index: 1001;
-  transition: left 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .mobile-sidebar.open {
