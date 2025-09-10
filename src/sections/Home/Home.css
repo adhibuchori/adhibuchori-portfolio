@@ -145,6 +145,36 @@
   align-items: center;
 }
 
+.home-stats-slider::before,
+.home-stats-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  transition: background 2s ease;
+}
+
+.home-stats-slider::before {
+  left: 0px;
+  background: linear-gradient(
+    to right,
+    var(--color-background) 0%,
+    transparent 100%
+  );
+}
+
+.home-stats-slider::after {
+  right: 0px;
+  background: linear-gradient(
+    to left,
+    var(--color-background) 0%,
+    transparent 100%
+  );
+}
+
 .home-stats-icon {
   color: black;
 }
