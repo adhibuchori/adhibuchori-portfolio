@@ -41,6 +41,36 @@
   padding: 48px 24px;
 }
 
+.testimonials-slider::before,
+.testimonials-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 160px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  transition: background 2s ease;
+}
+
+.testimonials-slider::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-background) 0%,
+    transparent 100%
+  );
+}
+
+.testimonials-slider::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--color-background) 0%,
+    transparent 100%
+  );
+}
+
 .testimonials-track {
   display: flex;
   gap: 24px;
