@@ -12,6 +12,7 @@ interface BaseTabsProps {
   onTabChange: (tabKey: string) => void;
   tabWrapperRef: React.RefObject<HTMLDivElement | null>;
   tabContainerRef: React.RefObject<HTMLDivElement | null>;
+  variant?: "base" | "journey";
 }
 
 const BaseTabs = ({
@@ -20,6 +21,7 @@ const BaseTabs = ({
   onTabChange,
   tabWrapperRef,
   tabContainerRef,
+  variant = "base",
 }: BaseTabsProps) => {
   const tabButtonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -44,7 +46,7 @@ const BaseTabs = ({
   }, [activeTab, tabs]);
 
   return (
-    <div className="base-tabs glass-effect" ref={tabContainerRef}>
+    <div className={`${variant}-tabs glass-effect`} ref={tabContainerRef}>
       <div className="base-tab-btn-wrapper" ref={tabWrapperRef}>
         <div
           className="base-tab-indicator-pill glass-effect"
@@ -59,9 +61,7 @@ const BaseTabs = ({
             ref={(el) => {
               tabButtonRefs.current[idx] = el;
             }}
-            className={`base-tab-btn ${
-              activeTab === tab.key ? "active" : ""
-            }`}
+            className={`base-tab-btn ${activeTab === tab.key ? "active" : ""}`}
             onClick={() => onTabChange(tab.key)}
             type="button"
           >

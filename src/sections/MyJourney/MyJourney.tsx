@@ -77,6 +77,7 @@ const MyJourneySection = () => {
           onTabChange={setActiveTab}
           tabContainerRef={tabContainerRef}
           tabWrapperRef={tabWrapperRef}
+          variant="journey"
         />
         <div
           className={`base-tab-container tab-content fade-in ${

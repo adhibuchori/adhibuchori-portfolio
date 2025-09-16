@@ -131,9 +131,48 @@
   }
 }
 
-/* Tablet */
-@media (min-width: 550px) and (max-width: 1400px) {
+/* Tablet Mini */
+@media (min-width: 550px) and (max-width: 920px) {
   .base-tabs {
+    width: 100%;
+    gap: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .base-tab-btn-wrapper {
+    position: relative;
+    margin: 0px 8px;
+    padding: 16px 0px;
+    border-radius: 100px;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .base-tab-btn-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .base-tab-btn {
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 16px;
+    flex: 1 2 auto;
+    white-space: nowrap;
+  }
+  .base-tab-container::before {
+    left: 0;
+    transform: none;
+    height: 99.6%;
+  }
+  .base-tab-container.hide-before::before {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .base-tabs {
+    width: fit-content;
     gap: 0px;
     padding: 0px;
     margin: 0px;
