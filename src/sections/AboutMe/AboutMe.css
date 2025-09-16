@@ -319,9 +319,6 @@
     width: 20px;
     height: 20px;
   }
-  .about-me-interest-wrapper {
-    width: 100%;
-  }
   .about-me-cta-wrapper {
     width: 100%;
   }
@@ -338,23 +335,17 @@
 /* Tablet */
 @media (min-width: 550px) and (max-width: 1400px) {
   #about-me {
-    padding: 0px 24px 24px 24px;
+    padding: 24px 24px;
   }
-  .about-me-header-container {
-    padding: 0px 24px;
-    gap: 8px;
+  .about-me-content-wrapper {
+    flex-direction: row;
   }
-  .about-me-content-wrapper,
-  .about-me-value-wrapper,
-  .about-me-interest-wrapper {
-    flex-direction: column;
+  .about-me-radar-wrapper {
+    flex: 0;
   }
-  .about-me-summary-content-wrapper {
-    width: 100%;
-  }
-  .about-me-summary-wrapper,
-  .about-me-interest-content-wrapper {
-    padding: 32px;
+  div.panel {
+    height: 240px;
+    width: 240px;
   }
   .about-me-title-text {
     font-size: 24px;
@@ -399,7 +390,7 @@
     height: 20px;
   }
   .about-me-interest-wrapper {
-    width: 100%;
+    width: 90%;
   }
   .about-me-button-wrapper {
     width: 100%;
