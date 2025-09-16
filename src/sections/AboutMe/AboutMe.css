@@ -284,6 +284,9 @@
   .about-me-cta-title {
     font-size: 16px;
   }
+  .about-me-value-desc-text {
+    width: 100%;
+  }
   .about-me-title-text {
     font-size: 24px;
     margin-bottom: 0px;
@@ -329,6 +332,9 @@
   }
   .about-me-button-text {
     font-size: 14px;
+  }
+  .about-me-interest-wrapper {
+    width: 100%;
   }
 }
 
