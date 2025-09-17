@@ -356,6 +356,10 @@
   .home-button-text {
     font-size: 14px;
   }
+  .home-stats-slider::before,
+  .home-stats-slider::after {
+    display: none;
+  }
 }
 
 /* Tablet Mini */
