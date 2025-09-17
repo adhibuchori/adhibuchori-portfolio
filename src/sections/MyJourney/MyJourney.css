@@ -87,7 +87,7 @@
   margin-top: 10%;
 }
 
-@media (max-width: 540px), (min-width: 550px) and (max-width: 1400px) {
+@media (max-width: 540px), (min-width: 550px) and (max-width: 1100px) {
   .has-margin-top {
     margin-top: 0 !important;
   }
@@ -699,8 +699,8 @@
   }
 }
 
-/* Tablet */
-@media (min-width: 550px) and (max-width: 1400px) {
+/* Tablet Mini */
+@media (min-width: 550px) and (max-width: 1100px) {
   #my-journey {
     padding: 0px 24px 24px 24px;
   }
@@ -760,6 +760,84 @@
   .my-journey-education-degree,
   .my-journey-volunteer-company {
     font-size: 14px;
+  }
+  .my-journey-subtitle-text,
+  .my-journey-desc-text,
+  .my-journey-experience-skill-chip,
+  .my-journey-certification-skill-chip,
+  .my-journey-experience-date,
+  .my-journey-experience-points li,
+  .my-journey-experience-points li::before,
+  .my-journey-experience-location,
+  .my-journey-education-duration,
+  .my-journey-education-grade,
+  .my-journey-education-activities,
+  .my-journey-education-points li,
+  .my-journey-education-points li::before,
+  .my-journey-volunteer-duration,
+  .my-journey-volunteer-date,
+  .my-journey-volunteer-location,
+  .my-journey-volunteer-points,
+  .my-journey-volunteer-points li,
+  .my-journey-volunteer-points li::before,
+  .my-journey-honors-and-awards-issued-by,
+  .my-journey-honors-and-awards-date,
+  .my-journey-honors-and-awards-description,
+  .my-journey-honors-and-awards-points,
+  .my-journey-honor-and-awards-points li,
+  .my-journey-honor-and-awards-points li::before {
+    font-size: 12px;
+  }
+  .my-journey-education-item .my-journey-honors-and-awards-item {
+    width: 100%;
+  }
+  .my-journey-show-btn {
+    font-size: 14px;
+  }
+  .my-journey-gradient-fade {
+    margin-top: -80px;
+    height: 80px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 1100px) and (max-width: 1400px) {
+  #my-journey {
+    padding: 0px 24px 24px 24px;
+  }
+  .my-journey-container {
+    gap: 24px;
+  }
+  .my-journey-header-container {
+    padding: 0px 24px;
+    gap: 8px;
+  }
+  .my-journey-title-text {
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
+  .my-journey-experience-title,
+  .my-journey-education-title,
+  .my-journey-volunteer-title,
+  .my-journey-honors-and-awards-title {
+    font-size: 16px;
+  }
+  .my-journey-desc-text {
+    text-align: center;
+    line-height: 1.6;
+  }
+  .my-journey-experience-company,
+  .my-journey-education-degree,
+  .my-journey-volunteer-company {
+    font-size: 14px;
+  }
+  .my-journey-experience-item.left::before,
+  .my-journey-volunteer-item.left::before {
+    left: 49%;
+  }
+  .my-journey-experience-item.right::before,
+  .my-journey-volunteer-item.right::before {
+    left: 51%;
   }
   .my-journey-subtitle-text,
   .my-journey-desc-text,

@@ -239,8 +239,8 @@ section[id] {
   }
 }
 
-/* Tablet */
-@media (min-width: 550px) and (max-width: 1400px) {
+/* Tablet Mini */
+@media (min-width: 550px) and (max-width: 1100px) {
   section[id] {
     scroll-margin-top: 95px;
   }
@@ -266,6 +266,15 @@ section[id] {
   .sidebar-item,
   .theme-toggle-text {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) {
+  .navbar-title {
+    font-size: 14px;
+  }
+  .navbar-item {
+    font-size: 12px;
   }
 }
 
