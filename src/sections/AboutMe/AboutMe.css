@@ -184,7 +184,7 @@
 
 .about-me-radar-wrapper {
   display: flex;
-  flex: 1;
+  flex: 0;
 }
 
 .about-me-interest-content-wrapper {
@@ -346,9 +346,6 @@
   .about-me-content-wrapper {
     flex-direction: row;
   }
-  .about-me-radar-wrapper {
-    flex: 0;
-  }
   div.panel {
     height: 240px;
     width: 240px;
@@ -394,9 +391,6 @@
   .about-me-location-icon {
     width: 20px;
     height: 20px;
-  }
-  .about-me-interest-wrapper {
-    width: 90%;
   }
   .about-me-button-wrapper {
     width: 100%;
