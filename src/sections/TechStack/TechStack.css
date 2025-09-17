@@ -130,9 +130,6 @@
     text-align: center;
     line-height: 1.6;
   }
-  .base-tabs {
-    width: 100%;
-  }
 }
 
 [data-theme="dark"] {
