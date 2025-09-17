@@ -132,7 +132,7 @@
 }
 
 /* Tablet Mini */
-@media (min-width: 550px) and (max-width: 920px) {
+@media (min-width: 550px) and (max-width: 825px) {
   .base-tabs {
     width: 100%;
     gap: 0px;
@@ -170,7 +170,7 @@
 }
 
 /* Tablet */
-@media (min-width: 1000px) and (max-width: 1400px) {
+@media (min-width: 825px) and (max-width: 1400px) {
   .base-tabs {
     width: fit-content;
     gap: 0px;
