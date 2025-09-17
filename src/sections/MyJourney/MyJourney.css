@@ -340,11 +340,9 @@
   content: attr(data-full-text);
 
   position: absolute;
-  top: 56px;
-  left: 96px;
 
   max-width: 64%;
-  margin-top: 4px;
+  margin-top: 36px;
   padding: 8px 12px;
   padding-left: 36px;
   border-radius: 6px;
