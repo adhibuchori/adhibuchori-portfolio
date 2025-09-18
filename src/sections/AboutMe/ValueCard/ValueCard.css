@@ -46,25 +46,6 @@
   line-height: 2;
 }
 
-.value-card-title,
-.value-card-desc {
-  background: linear-gradient(90deg, #7d7d7d, #000000, #7d7d7d);
-  background-size: 200% auto;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: shine 7s linear infinite;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-
 @media (max-width: 1400px) {
   .value-card {
     width: 100%;
@@ -92,14 +73,5 @@
     );
     border: 2px solid #1c2120;
     border-right: none;
-  }
-  .value-card-title,
-  .value-card-desc {
-    background: linear-gradient(90deg, #7d7d7d, #ffffff, #7d7d7d);
-    background-size: 200% auto;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: shine 7s linear infinite;
   }
 }
