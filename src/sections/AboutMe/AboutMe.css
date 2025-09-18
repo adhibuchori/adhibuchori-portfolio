@@ -213,10 +213,12 @@
 .about-me-cta-title {
   font-size: 22px;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 .about-me-cta-subtitle {
   font-size: 16px;
+  line-height: 1.6;
 }
 
 .about-me-button-wrapper {
