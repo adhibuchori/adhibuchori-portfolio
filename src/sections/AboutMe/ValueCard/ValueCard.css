@@ -57,7 +57,7 @@
     font-size: 14px;
   }
   .value-card:hover {
-    transform: scale(1.025);
+    transform: none;
   }
 }
 
