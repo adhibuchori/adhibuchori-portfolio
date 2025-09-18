@@ -3,6 +3,8 @@ import IconMail from "../../assets/icons/ic_mail.svg?react";
 import IconLanguage from "../../assets/icons/ic_language.svg?react";
 import IconCat from "../../assets/icons/ic_cute_cat.svg?react";
 import RadarScanner from "./RadarScanner/RadarScanner";
+import ValueCard from "./ValueCard/ValueCard";
+import { values } from "./ValueCard/values";
 
 const AboutMeSection = () => {
   return (
@@ -58,16 +60,14 @@ const AboutMeSection = () => {
           </div>
         </div>
         <div className="about-me-value-wrapper">
-          <p className="about-me-value-desc-text glass-effect">
-            Turn your imagination into digital reality
-          </p>
-          <p className="about-me-value-desc-text glass-effect">
-            Empowering digital solutions through collaboration, adaptability,
-            teamwork, and continuous growth
-          </p>
-          <p className="about-me-value-desc-text glass-effect">
-            Crafting high-performance and high-quality software
-          </p>
+          {values.map((item) => (
+            <ValueCard
+              key={item.title}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
         </div>
         <div className="about-me-interest-wrapper">
           <div className="about-me-radar-wrapper">

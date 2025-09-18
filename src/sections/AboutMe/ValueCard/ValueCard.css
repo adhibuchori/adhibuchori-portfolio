@@ -1,0 +1,105 @@
+.value-card {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: scale(1.05);
+}
+
+.value-card-icon {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  width: 72px;
+  margin: 10px 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-500),
+    var(--color-primary-700)
+  );
+  border: 2px solid #b4c2bd;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+}
+
+.value-card-icon svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.value-card-content {
+  flex: 1;
+  padding: 24px;
+  border-radius: 8px 24px 24px 8px;
+}
+
+.value-card-title {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.value-card-desc {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.value-card-title,
+.value-card-desc {
+  background: linear-gradient(90deg, #7d7d7d, #000000, #7d7d7d);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 7s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@media (max-width: 1400px) {
+  .value-card {
+    width: 100%;
+  }
+  .value-card-title {
+    font-size: 18px;
+  }
+  .value-card-desc {
+    font-size: 14px;
+  }
+  .value-card:hover {
+    transform: scale(1.025);
+  }
+}
+
+[data-theme="dark"] {
+  .value-card-icon svg {
+    color: white;
+  }
+  .value-card-icon {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-400),
+      var(--color-primary-600)
+    );
+    border: 2px solid #1c2120;
+    border-right: none;
+  }
+  .value-card-title,
+  .value-card-desc {
+    background: linear-gradient(90deg, #7d7d7d, #ffffff, #7d7d7d);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shine 7s linear infinite;
+  }
+}
